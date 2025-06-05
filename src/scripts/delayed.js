@@ -164,7 +164,7 @@ async function addSrtextToAppstore() {
 }
 
 setTimeout(fetchSrOnlyData, 5000);
-console.log('timeout');
+console.log('timeout ');
 convertDelToSrSpan();
 navigationAccessibility();
 paginationAccessibility();
