@@ -1,0 +1,1 @@
+export default async function decorate(a){var[a,t]=Array.from(a.children);t?.classList.add("blog-cta-btn"),a?.classList.add("blog-cta-body")}

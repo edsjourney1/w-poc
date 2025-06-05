@@ -1,0 +1,154 @@
+@import '../../styles/include/_mq.scss';
+@import '../../styles/include/_tokens.scss';
+
+main {
+  .table-wrapper {
+    @include for-mobile {
+      padding: 72px 16px 72px 16px;
+    }
+    @media (max-width: 393.5px) {
+      padding: 72px 16px 72px 16px;
+    }
+    @include for-tablet {
+      padding: 96px 36px 96px 36px;
+    }
+    @include for-tablet-smallest {
+      padding: 96px 36px 96px 36px;
+      table {
+        width: 200%;
+      }
+    }
+    @include for-laptop {
+      padding: 120px 36px 120px 36px;
+    }
+    @include for-large {
+      padding: 120px 52px 120px 52px;
+    }
+    @include for-xlarge {
+      padding: 120px 0 120px 0;
+    }
+  }
+  .table-no-padding {
+    .table-wrapper {
+      @include for-mobile {
+        padding: 0 16px 20px 16px;
+      }
+      @media (max-width: 393.5px) {
+        padding-left: 16px;
+        padding-right: 16px;
+      }
+
+      @include for-tablet {
+        padding: 0 36px 20px 36px;
+      }
+
+      @include for-tablet-smallest {
+        padding: 0 36px 20px 36px;
+        table {
+          width: 200%;
+        }
+      }
+
+      @include for-laptop {
+        padding: 0 36px 20px 36px;
+      }
+      @include for-large {
+        padding: 0 52px 20px 52px;
+      }
+      @include for-xlarge {
+        padding: 0 0 20px 0;
+      }
+    }
+  }
+}
+.table {
+  overflow-x: auto;
+  width: 100%;
+  color: rgba(75, 76, 77, 1);
+  font-family: $--font-roboto;
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 0px;
+  line-height: 24px;
+
+  table {
+    .icon {
+      height: auto;
+      width: auto;
+      margin-right: 2px;
+      margin-left: 5px;
+    }
+    .icon-phone,
+    .icon-solid--phone,
+    .icon-regular--phone,
+    .icon-light--phone {
+      margin-left: 2px;
+      margin-right: 2px;
+    }
+
+    border-collapse: collapse;
+    width: 100%;
+    @include for-mobile {
+      // width: 250%;
+      width: 200%;
+    }
+
+    // if tfoot on even row, change it's color
+    &:has(tbody tr:last-child:nth-child(odd)) tfoot {
+      background-color: $--gray-100;
+    }
+    td {
+      ul {
+        margin: 0;
+        padding-left: 40px;
+      }
+    }
+    p {
+      margin: 0 0 10px 0;
+      // &:has(+ ul) {
+      //   margin: 0;
+      // }
+      &:last-child {
+        margin: 0;
+      }
+      .icon i {
+        font-size: 16px;
+      }
+    }
+    thead {
+      opacity: 1;
+      th {
+        font-weight: inherit;
+        padding: 16px 24px 18px 24px;
+        text-align: left;
+        border-bottom: 2px solid $--blue-550;
+      }
+    }
+    tfoot {
+      opacity: 1;
+      td {
+        text-align: left;
+        padding: 12px 24px;
+      }
+    }
+    tbody {
+      opacity: 1;
+      td {
+        vertical-align: top;
+        text-align: left;
+        padding: 12px 24px;
+      }
+
+      tr:nth-child(even) {
+        opacity: 1;
+        td {
+          &:first-child {
+            border-radius: 2px 0px 0px 2px;
+          }
+
+          background-color: $--gray-100;
+        }
+      }
+    }
+  }
+}

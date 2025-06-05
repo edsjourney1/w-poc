@@ -1,0 +1,13 @@
+let loadScript=(e,t,o)=>{var i=document.querySelector("head"),l=document.createElement("script");return l.src=e,o&&l.setAttribute("type",o),l.onload=t,i.append(l),l},getDefaultEmbed=e=>`<div style="left: 0; width: 100%; height: 0; position: relative; padding-bottom: 56.25%;">
+    <iframe src="${e.href}" style="border: 0; top: 0; left: 0; width: 100%; height: 100%; position: absolute;" allowfullscreen=""
+      scrolling="no" allow="encrypted-media" title="Content from ${e.hostname}" loading="lazy">
+    </iframe>
+  </div>`,embedYoutube=(e,t)=>{var o=new URLSearchParams(e.search),t=t?"&muted=1&autoplay=1":"";let i=o.get("v")?encodeURIComponent(o.get("v")):"";o=e.pathname,e.origin.includes("youtu.be")&&([,i]=e.pathname.split("/")),e=`<div style="left: 0; width: 100%; height: 0; position: relative; padding-bottom: 56.25%;">
+      <iframe src="https://www.youtube.com${i?`/embed/${i}?rel=0&v=`+i+t:o}" style="border: 0; top: 0; left: 0; width: 100%; height: 100%; position: absolute;" 
+      allow="autoplay; fullscreen; picture-in-picture; encrypted-media; accelerometer; gyroscope; picture-in-picture" allowfullscreen="" scrolling="no" title="Content from Youtube" loading="lazy"></iframe>
+    </div>`;return e},embedVimeo=(e,t)=>{var[,e]=e.pathname.split("/");return`<div style="left: 0; width: 100%; height: 0; position: relative; padding-bottom: 56.25%;">
+      <iframe src="https://player.vimeo.com/video/${e}${t?"?muted=1&autoplay=1":""}" 
+      style="border: 0; top: 0; left: 0; width: 100%; height: 100%; position: absolute;" 
+      frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen  
+      title="Content from Vimeo" loading="lazy"></iframe>
+    </div>`},embedTwitter=e=>{e=`<blockquote class="twitter-tweet"><a href="${e.href}"></a></blockquote>`;return loadScript("https://platform.twitter.com/widgets.js"),e},loadEmbed=(e,t,o)=>{var i,l;e.classList.contains("embed-is-loaded")||(i=[{match:["youtube","youtu.be"],embed:embedYoutube},{match:["vimeo"],embed:embedVimeo},{match:["twitter"],embed:embedTwitter}].find(e=>e.match.some(e=>t.includes(e))),l=new URL(t),i?(e.innerHTML=i.embed(l,o),e.classList="block embed embed-"+i.match[0]):(e.innerHTML=getDefaultEmbed(l),e.classList="block embed"),e.classList.add("embed-is-loaded"))};export default function decorate(o){var e=o.querySelector("picture");let i=o.querySelector("a").href;if(o.textContent="",e){var t=document.createElement("div");t.className="embed-placeholder",t.innerHTML='<div class="embed-placeholder-play"><button type="button" title="Play"></button></div>',t.prepend(e),t.addEventListener("click",()=>{loadEmbed(o,i,!0)}),o.append(t)}else{let t=new IntersectionObserver(e=>{e.some(e=>e.isIntersecting)&&(t.disconnect(),loadEmbed(o,i))});t.observe(o)}}

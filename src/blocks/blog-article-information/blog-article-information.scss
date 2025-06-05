@@ -1,0 +1,246 @@
+@import '../../styles/include/_mq.scss';
+@import '../../styles/include/_tokens.scss';
+
+.blog-article-information-container {
+  .blog-article-information-wrapper {
+    @include for-large {
+      max-width: 100%;
+      width: 100%;
+    }
+    .blog-article-information.block {
+      margin: auto;
+      position: relative;
+      @include for-xlarge {
+        width: 1275px;
+      }
+      @include for-large {
+        width: calc(100% - 104px);
+      }
+      @include for-laptop {
+        width: calc(100% - 72px);
+      }
+      @include for-tablet {
+        width: calc(100% - 72px);
+        padding-bottom: 21px;
+      }
+      @include for-mobile {
+        width: calc(100% - 32px);
+        padding-bottom: 21px;
+      }
+      p {
+        color: $--gray-700;
+        font-family: $--font-roboto;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 24px;
+        margin: 0;
+      }
+      div {
+        &:has(.date) {
+          display: flex;
+          .date {
+            width: 50%;
+            display: flex;
+            p {
+              &:first-child:not(:only-child) {
+                position: relative;
+                &::after {
+                  content: '•';
+                  position: absolute;
+                  right: -9px;
+                  top: 55%;
+                  transform: translateY(-50%);
+                  font-size: 16px;
+                  font-weight: 700;
+                  color: $--gray-700;
+                }
+              }
+
+              &:last-child:not(:only-child) {
+                margin-left: 13px;
+                @include for-tablet {
+                  margin-left: 0;
+                }
+                @include for-mobile {
+                  margin-left: 0;
+                }
+                span {
+                  @include for-tablet {
+                    margin-left: 0;
+                  }
+                  @include for-mobile {
+                    margin-left: 0;
+                  }
+                }
+              }
+              span:first-child {
+                margin-right: 4px;
+              }
+            }
+            @include for-tablet {
+              width: 100%;
+              flex-direction: column;
+              p {
+                &::after {
+                  display: none;
+                }
+                &:last-child {
+                  margin: 0;
+                  padding-top: 8px;
+                }
+              }
+            }
+            @include for-mobile {
+              width: 100%;
+              flex-direction: column;
+              p {
+                &::after {
+                  display: none;
+                }
+                &:last-child {
+                  margin: 0;
+                  padding-top: 8px;
+                }
+              }
+            }
+          }
+          .author {
+            width: 50%;
+            p {
+              line-height: 20px;
+              display: flex;
+              justify-content: flex-end;
+              align-items: center;
+              @include for-tablet {
+                justify-content: flex-start;
+              }
+              @include for-mobile {
+                justify-content: flex-start;
+              }
+              span {
+                margin-right: 8px;
+                background-color: $--gray-700;
+                border-radius: 50%;
+                width: 24px;
+                height: 24px;
+                position: relative;
+                i {
+                  font-size: 16px;
+                  color: $--white;
+                  position: absolute;
+                  left: 5px;
+                  top: 3px;
+                }
+              }
+            }
+            @include for-tablet {
+              width: 100%;
+              position: absolute;
+              bottom: 0;
+            }
+            @include for-mobile {
+              width: 100%;
+              position: absolute;
+              bottom: 0;
+            }
+          }
+        }
+      }
+      .article-link {
+        padding: 8px 0;
+        display: flex;
+        align-items: center;
+        @include for-tablet {
+          padding-bottom: 12px;
+          flex-wrap: wrap;
+        }
+        @include for-mobile {
+          padding-bottom: 0;
+          flex-wrap: wrap;
+        }
+        p {
+          @include for-mobile {
+            padding-bottom: 12px;
+          }
+          &:first-child:not(:only-child) {
+            position: relative;
+            margin-right: 13px;
+            &::after {
+              content: '•';
+              position: absolute;
+              right: -9px;
+              top: 52%;
+              transform: translateY(-50%);
+              font-size: 16px;
+              font-weight: 700;
+              color: $--gray-700;
+            }
+            @include for-mobile {
+              display: block;
+              width: 100%;
+              margin: 0;
+              &::after {
+                display: none;
+              }
+            }
+            span {
+              text-transform: lowercase;
+            }
+          }
+          @media (min-width: 481px) and (max-width: 600px) {
+            &:nth-child(n + 4) {
+              padding-top: 9px;
+            }
+          }
+          a {
+            color: $--blue-675;
+            font-family: $--font-roboto;
+            font-size: 16px;
+            line-height: 19px;
+            font-weight: 500;
+            cursor: pointer;
+            text-decoration: underline;
+            margin-right: 12px;
+          }
+          span:first-child {
+            margin-right: 4px;
+          }
+        }
+      }
+      .article-audio {
+        @include for-tablet {
+          padding-bottom: 12px;
+        }
+        @include for-mobile {
+          padding-bottom: 12px;
+        }
+        p {
+          display: flex;
+          align-items: center;
+          a {
+            color: $--blue-675;
+            font-family: $--font-roboto;
+            font-size: 16px;
+            line-height: 19px;
+            font-weight: 500;
+            text-decoration: underline;
+          }
+          span {
+            margin-right: 8px;
+            height: 21px;
+            @include for-tablet {
+              margin-right: 16px;
+            }
+            i {
+              color: $--gray-700;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.icon-phone,
+.icon-solid--phone {
+  margin: 0 2px 0 2px;
+}

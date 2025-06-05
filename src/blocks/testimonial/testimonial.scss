@@ -1,0 +1,246 @@
+@import '../../styles/include/_mq.scss';
+@import '../../styles/include/_tokens.scss';
+.section.testimonial-container {
+  font-family: $--font-roboto;
+  .testimonial-wrapper {
+    padding: $--spacing-max $--spacing-xl;
+    text-align: center;
+    @include for-xlarge {
+      padding: $--spacing-max 0;
+    }
+    @include for-laptop {
+      padding: $--spacing-max $--spacing-xl;
+    }
+    @include for-tablet {
+      padding: $--spacing-jumbo $--spacing-xl;
+    }
+    @include for-mobile {
+      padding: $--spacing-huge $--spacing-m;
+    }
+    span.icon {
+      margin: 0 2px 0 5px;
+      width: auto;
+      height: auto;
+    }
+    span.icon.icon-light--phone,
+    span.icon.icon-regular--phone,
+    span.icon.icon-phone,
+    span.icon.icon-solid--phone {
+      margin: 0 2px 0 2px;
+    }
+    .testimonial-heading {
+      font-family: $--font-museo;
+      font-size: 32px;
+      line-height: 38px;
+      font-weight: 700;
+      margin: 0;
+      margin-bottom: $--spacing-huge;
+      text-align: center;
+      color: $--gray-700;
+      &:has(a) {
+        color: $--blue-550;
+      }
+      span.icon {
+        i{
+          font-size: 32px;
+        }
+      }
+      @include for-tablet {
+        margin-bottom: $--spacing-xxl;
+        font-size: 28px;
+        span.icon {
+          i{
+            font-size: 28px;
+          }
+        }
+      }
+      @include for-mobile {
+        margin-bottom: $--spacing-xl;
+        font-size: 28px;
+        span.icon {
+          i{
+            font-size: 28px;
+          }
+        }
+      }
+    }
+    div {
+      &.inline-link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-top: $--spacing-huge;
+        @include for-laptop {
+          padding-top: $--spacing-huge;
+        }
+        @include for-tablet {
+          padding-top: $--spacing-xl;
+        }
+        @include for-mobile {
+          padding-top: $--spacing-xl;
+        }
+      }
+      .testimonial-link {
+        font-size: 16px;
+        line-height: 22px;
+        font-weight: 500;
+        color: $--primary-675;
+        text-decoration: underline;
+        span.icon {
+          i {
+            font-size: 16px;
+          }
+        }
+        @include for-tablet {
+          margin-top: $--spacing-m;
+        }
+        @include for-mobile {
+          margin-top: $--spacing-s;
+        }
+      }
+      .link-img {
+        display: inline-block;
+        vertical-align: middle;
+        width: 15px;
+        height: 15px;
+        line-height: 1;
+        i {
+          color: $--blue-675;
+          font-size: 15px;
+        }
+      }
+    }
+    .testimonial {
+      ul {
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        padding-left: 0;
+        @include for-tablet {
+          flex-direction: column;
+          gap: 36px;
+        }
+        @include for-mobile {
+          flex-direction: column;
+          gap: 24px;
+        }
+        li {
+          list-style-type: none;
+          text-align: left;
+          background-color: $--blue-50;
+          color: $--gray-700;
+          padding: 45px $--spacing-xl $--spacing-jumbo $--spacing-xl;
+          border-radius: 4px;
+          @include for-xlarge {
+            width: calc((100% + 60px) / 12 * 3);
+          }
+          @include for-large {
+            width: calc((100% + 60px) / 12 * 3);
+          }
+          @include for-laptop {
+            width: calc((100% - 30px) / 3);
+          }
+          @include for-tablet {
+            flex-basis: calc((100% - 72px) / 1);
+          }
+          .testimonial-title {
+            font-family: $--font-museo;
+            font-size: 32px;
+            line-height: 38px;
+            font-weight: 700;
+            margin: 45px 0 $--spacing-l 0;
+            @include for-laptop {
+              margin: 0;
+              margin-top: 45px;
+            }
+            @include for-tablet {
+              margin: 0;
+              margin-top: 45px;
+            }
+            @include for-mobile {
+              margin: 0;
+              margin-top: 45px;
+            }
+            span.icon {
+              i{
+                font-size: 32px;
+              }
+            }
+          }
+          .testimonial-description {
+            font-size: 16px;
+            line-height: 24px;
+            font-weight: 400;
+            margin: 0;
+            span.icon {
+              i{
+                font-size: 16px;
+              }
+            }
+          }
+          &:first-child {
+            margin-bottom: 0 !important;
+          }
+          > div {
+            &:last-child {
+              padding: 0;
+              @include for-laptop {
+                padding-top: $--spacing-l;
+              }
+              @include for-tablet {
+                padding-top: $--spacing-l;
+              }
+              @include for-mobile {
+                padding-top: $--spacing-l;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.testimonial-wrapper {
+  .testimonial {
+    .testimonial-1-quote {
+      li {
+        @include for-xlarge {
+          width: calc((100% - 175px) / 12 * 6) !important;
+        }
+        @include for-large {
+          width: calc((100% - 175px) / 12 * 6) !important;
+        }
+        @include for-laptop {
+          width: calc((100% - 175px) / 12 * 6) !important;
+        }
+        @include for-tablet {
+          width: calc(100% - 72px) !important;
+        }
+      }
+    }
+  }
+}
+.eight-column-large {
+  .testimonial-wrapper {
+    .testimonial {
+      ul {
+        li {
+          background-color: $--blue-50;
+          width: calc((100% - 104px) / 2) !important;
+          @include for-xlarge {
+            width: calc((100% / 12) * 8 - 82px) !important;
+          }
+          @include for-laptop {
+            width: calc((100% / 12) * 9) !important;
+          }
+          @include for-tablet {
+            width: unset !important;
+          }
+          @include for-mobile {
+            width: unset !important;
+          }
+        }
+      }
+    }
+  }
+}

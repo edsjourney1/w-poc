@@ -1,0 +1,1 @@
+export default function decorate(c){var e=[...c.firstElementChild.children];c.classList.add(`columns-${e.length}-cols`),[...c.children].forEach(c=>{[...c.children].forEach(c=>{var c=c.querySelector("picture");c&&(c=c.closest("div"))&&1===c.children.length&&c.classList.add("columns-img-col")})})}

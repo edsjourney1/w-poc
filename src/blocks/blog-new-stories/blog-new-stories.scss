@@ -1,0 +1,212 @@
+@import '../../styles/include/_mq.scss';
+@import '../../styles/include/_tokens.scss';
+
+.blog-new-stories {
+  .new-heading {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding-bottom: 52px;
+    .line-icon {
+      p {
+        margin: 0;
+        font-weight: 500;
+        &:not(.button-container) {
+          span.icon {
+            &.icon-phone,
+            &.icon-light--phone,
+            &.icon-regular--phone,
+            &.icon-solid--phone {
+              margin: 0 2px 0 2px;
+            }
+            height: auto;
+            width: auto;
+            margin: 0 2px 0 5px;
+            i {
+              font-size: 16px;
+            }
+          }
+        }
+        &:not(:has(strong, em)) {
+          a {
+            span.icon {
+              &.icon-phone,
+              &.icon-light--phone,
+              &.icon-regular--phone,
+              &.icon-solid--phone {
+                margin: 0 2px 0 2px;
+              }
+              height: auto;
+              width: auto;
+              margin: 0 2px 0 5px;
+              i {
+                font-size: 16px;
+              }
+            }
+          }
+        }
+      }
+    }
+    @include for-mobile {
+      flex-direction: column;
+      gap: 16px;
+    }
+    @include for-tablet {
+      flex-direction: column;
+      gap: 24px;
+    }
+    > .stories-title {
+      margin: 0;
+      @include for-mobile {
+        width: 100%;
+      }
+      @include for-tablet {
+        width: 100%;
+      }
+      @include for-laptop {
+        width: calc((100% - 15px) / 8 * 5);
+      }
+      @include for-large {
+        width: calc((100% - 15px) / 8 * 6);
+      }
+      @include for-xlarge {
+        width: calc((100% - 15px) / 8 * 6);
+      }
+      &:has(a) {
+        color: $--blue-675;
+      }
+    }
+  }
+  .new-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
+    > .new-card-div {
+      display: flex;
+      align-items: start;
+      width: 100%;
+      gap: 30px;
+      border-bottom: 2px solid $--gray-225;
+      padding-bottom: 34px;
+      &:last-child {
+        border-bottom: unset;
+        padding-bottom: 0;
+      }
+      @include for-tablet {
+        flex-direction: column;
+        gap: 0px;
+      }
+      @include for-mobile {
+        flex-direction: column;
+        gap: 0px;
+      }
+      > .image-div {
+        width: calc((100% + 35px) / 8 * 3);
+        @include for-laptop {
+          width: calc((100% - 30px) / 8 * 4);
+        }
+        @include for-tablet {
+          width: 100%;
+          padding-bottom: 24px;
+        }
+        @include for-mobile {
+          width: 100%;
+          padding-bottom: 24px;
+        }
+        a {
+          > img {
+            border-radius: 4px;
+            width: 100%;
+          }
+        }
+      }
+      > .content-div {
+        width: calc((100% - 35px) / 8 * 4);
+        @include for-xlarge {
+          margin-right: 150px;
+        }
+        @include for-laptop {
+          width: calc((100% - 30px) / 8 * 4);
+        }
+        @include for-tablet {
+          width: 100%;
+        }
+        @include for-mobile {
+          width: 100%;
+        }
+        > .card-title {
+          color: $--blue-675;
+          text-decoration: underline;
+          margin: 0;
+          padding-bottom: 8px;
+          .icon {
+            &.icon-phone,
+            &.icon-light--phone,
+            &.icon-regular--phone,
+            &.icon-solid--phone {
+              margin: 0 2px 0 2px;
+            }
+            height: auto;
+            width: auto;
+            margin: 0 2px 0 5px;
+            i {
+              font-size: 24px;
+            }
+          }
+        }
+        > .description {
+          margin: 0;
+          padding-bottom: 8px;
+        }
+
+        > .date-div {
+          display: flex;
+          position: relative;
+          gap: 13px;
+          padding-bottom: 12px;
+          > .date {
+            margin: 0;
+            &::after {
+              content: '•';
+              position: absolute;
+              left: 90px;
+              @include for-mobile {
+                left: 88px;
+              }
+              @include for-tablet {
+                left: 88px;
+              }
+              top: 35%;
+              transform: translateY(-50%);
+              font-size: 16px;
+              color: $--gray-700;
+            }
+          }
+          > .read-time {
+            margin: 0;
+          }
+        }
+        > .category-list {
+          margin: 0;
+          overflow-wrap: break-word;
+          @include for-tablet {
+            padding-bottom: 36px;
+          }
+          @include for-mobile {
+            padding-bottom: 36px;
+          }
+          > a {
+            font-weight: 500;
+            color: $--blue-675;
+            text-decoration: underline;
+            margin-right: 12px;
+            white-space: nowrap;
+            &:last-child {
+              margin: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+}

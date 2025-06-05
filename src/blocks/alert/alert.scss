@@ -1,0 +1,158 @@
+@import '../../styles/include/_mq.scss';
+@import '../../styles/include/_tokens.scss';
+
+.alert {
+  &-wrapper {
+    position: relative;
+    @include for-laptop {
+      width: calc(100% - 72px);
+    }
+    @include for-tablet {
+      width: calc(100% - 72px);
+    }
+    @include for-mobile {
+      width: calc(100% - 32px);
+    }
+    h5 {
+      margin: 0 0 4px 0;
+      color: $--gray-700;
+      font-size: 20px;
+      line-height: 24px;
+      font-family: $--font-roboto;
+      font-weight: 700;
+      opacity: 1;
+      &:has(a) {
+        color: $--blue-50;
+      }
+      span {
+        margin: 0 2px 0 5px;
+        width: auto;
+        height: auto;
+        i {
+          font-size: 20px;
+        }
+      }
+    }
+    p {
+      margin: 0 0 10px 0;
+      font-family: $--font-roboto;
+      color: $--gray-700;
+      font-size: 16px;
+      line-height: 24px;
+      font-weight: 400;
+      span {
+        margin: 0 2px 0 5px;
+        width: auto;
+        height: auto;
+        i {
+          font-size: 16px;
+        }
+      }
+      span.icon.icon-light--phone,
+      span.icon.icon-regular--phone,
+      span.icon.icon-phone,
+      span.icon.icon-solid--phone {
+        margin: 0 2px 0 2px;
+      }
+      &:last-child {
+        margin: 0;
+      }
+      &:not(:only-child) {
+        margin-bottom: 16px;
+      }
+    }
+    .alert {
+      border-radius: 0 2px 2px 0;
+      position: relative;
+      margin: 24px 0;
+      &::before {
+        border-radius: 2px 0 0 2px;
+        content: '';
+        display: block;
+        height: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 10px;
+      }
+      > div:first-child {
+        display: flex;
+        gap: 16px;
+        @include for-xlarge {
+          padding: 24px 125px 24px 34px;
+        }
+        @include for-large {
+          padding: 24px 125px 24px 34px;
+        }
+        @include for-laptop {
+          padding: 24px 91px 24px 34px;
+        }
+        @include for-tablet {
+          padding: 24px 91px 24px 34px;
+        }
+        @include for-tablet-smallest {
+          padding: 24px 35px 24px 34px;
+        }
+        @include for-mobile {
+          padding: 24px 27px 24px 34px;
+        }
+        p:has(.icon) {
+          line-height: 1;
+        }
+        > div:first-child {
+          .icon {
+            i {
+              font-size: 29px;
+            }
+          }
+        }
+        > div:last-child {
+          .icon {
+            height: auto;
+            width: auto;
+            > i {
+              color: inherit;
+              font-size: inherit;
+            }
+          }
+        }
+      }
+    }
+  }
+  &-warning {
+    background-color: $--yellow-50;
+    &::before {
+      background-color: $--yellow-550;
+    }
+    > div:first-child .icon i {
+      color: $--yellow-550;
+    }
+  }
+  &-info {
+    background-color: $--blue-50;
+    &::before {
+      background-color: $--blue-675;
+    }
+    > div:first-child .icon i {
+      color: $--blue-675;
+    }
+  }
+  &-success {
+    background-color: $--green-50;
+    &::before {
+      background-color: $--green-550;
+    }
+    > div:first-child .icon i {
+      color: $--green-550;
+    }
+  }
+  &-error {
+    background-color: $--red-50;
+    &::before {
+      background-color: $--red-550;
+    }
+    > div:first-child .icon i {
+      color: $--red-550;
+    }
+  }
+}

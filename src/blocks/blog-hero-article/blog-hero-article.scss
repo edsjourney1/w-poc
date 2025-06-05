@@ -1,0 +1,174 @@
+@import '../../styles/include/_mq.scss';
+@import '../../styles/include/_tokens.scss';
+
+.blog-hero-article-container {
+  .blog-hero-article-wrapper {
+    .blog-hero-article {
+      > div {
+        display: flex;
+        @include for-xlarge {
+          display: flex;
+          gap: 30px;
+        }
+        @include for-large {
+          display: flex;
+          gap: 30px;
+        }
+        @include for-laptop {
+          display: flex;
+          gap: 30px;
+          padding: 0 36px;
+        }
+        @include for-mobile {
+          display: flex;
+          flex-direction: column;
+          padding: 0 16px;
+        }
+        @include for-tablet {
+          display: flex;
+          flex-direction: column;
+          padding: 0 36px;
+        }
+        > .image-div {
+          @include for-xlarge {
+            width: 57.33%;
+            padding-bottom: 72px;
+          }
+          @include for-large {
+            width: 57.33%;
+            padding-bottom: 72px;
+          }
+          @include for-laptop {
+            width: 50%;
+          }
+          @include for-mobile {
+            width: 100%;
+          }
+          @include for-tablet {
+            width: 100%;
+          }
+          > img {
+            width: 100%;
+            border-radius: 4px;
+          }
+        }
+        > .content-div {
+          @include for-xlarge {
+            width: 40.33%;
+          }
+          @include for-large {
+            width: 40.33%;
+          }
+          @include for-laptop {
+            width: 50%;
+          }
+          @include for-mobile {
+            width: 100%;
+          }
+          @include for-tablet {
+            width: 100%;
+          }
+          h2 {
+            opacity: 1;
+            color: $--gray-700;
+            font-family: $--font-museo;
+            font-size: 32px;
+            font-weight: 600;
+            letter-spacing: 0px;
+            text-align: left;
+            margin: 0;
+            padding: 52px 0 16px 0;
+            line-height: 38px;
+            @include for-mobile {
+              font-size: 28px;
+            }
+          }
+          .date-div {
+            > p {
+              display: flex;
+              gap: 12px;
+              margin: 0;
+              &:first-child {
+                padding-bottom: 8px;
+              }
+              span {
+                position: relative;
+                &:first-child {
+                  &::after {
+                    content: '•';
+                    position: absolute;
+                    right: -9px;
+                    top: 52%;
+                    transform: translateY(-50%);
+                    font-size: 16px;
+                    color: $--gray-700;
+                  }
+                }
+                p {
+                  margin: 0;
+                }
+              }
+            }
+            .category-list {
+              display: unset;
+              overflow-wrap: break-word;
+              > a {
+                opacity: 1;
+                color: $--blue-675;
+                font-family: $--font-roboto;
+                font-size: 16px;
+                font-weight: 500;
+                letter-spacing: 0px;
+                text-align: left;
+                text-decoration: underline;
+                margin-right: 12px;
+                white-space: nowrap;
+                &:last-child {
+                  margin: 0;
+                }
+              }
+            }
+          }
+          > .description {
+            padding-top: 24px;
+            height: 150px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            > p {
+              height: 100%;
+              position: relative;
+              margin: 0;
+              &::after {
+                content: '';
+                position: absolute;
+                height: 100%;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                background: linear-gradient(
+                  to bottom,
+                  rgba(255, 255, 255, 0),
+                  rgba(255, 255, 255, 1)
+                );
+                pointer-events: none; /* Ensures the text is still selectable */
+              }
+            }
+          }
+          > .button-container {
+            margin: 0;
+            padding-top: 24px;
+            @include for-mobile {
+              padding-bottom: 72px;
+            }
+            @include for-tablet {
+              padding-bottom: 96px;
+            }
+            @include for-laptop {
+              padding-bottom: 120px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

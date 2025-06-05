@@ -1,0 +1,59 @@
+@import '../../styles/include/_mq.scss';
+@import '../../styles/include/_tokens.scss';
+
+.floating-cta-wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  .floating-cta {
+    margin: 0;
+    position: fixed;
+    bottom: 52px;
+    .button-container {
+      align-items: center;
+      display: flex;
+      justify-content: center;
+      p {
+        margin: 0;
+      }
+      a {
+        background-color: $--primary-675;
+        border-radius: 50px;
+        color: $--white;
+        column-gap: 12px;
+        display: inline-flex;
+        font-size: 18px;
+        font-weight: 500;
+        padding: 12px 36px;
+        text-decoration: none;
+        &:hover {
+          background-color: $--blue-775;
+        }
+        .icon {
+          height: auto;
+          width: auto;
+          > i {
+            color: $--white !important;
+            font-size: inherit;
+          }
+        }
+      }
+    }
+    &-light {
+      .button-container {
+        a {
+          background-color: $--blue-50;
+          color: $--primary-675;
+          &:hover {
+            background-color: $--blue-100;
+          }
+          .icon {
+            > i {
+              color: $--primary-675;
+            }
+          }
+        }
+      }
+    }
+  }
+}

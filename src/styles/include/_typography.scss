@@ -1,0 +1,275 @@
+@import 'mq';
+@import 'tokens';
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: $--gray-700;
+  opacity: 1;
+  text-align: left;
+  letter-spacing: 0px;
+}
+h1,
+h2 {
+  font-family: $--font-museo;
+  font-weight: 700;
+}
+
+h3,
+h4,
+h5,
+h6 {
+  font-family: $--font-roboto;
+  font-weight: bold;
+}
+
+h1 {
+  font-size: 32px;
+  line-height: 33px;
+
+  @include for-nonmobile {
+    font-size: 40px;
+    line-height: 47px;
+  }
+}
+
+h2 {
+  font-size: 28px;
+  line-height: 28px;
+
+  @include for-nonmobile {
+    font-size: 32px;
+    line-height: 31px;
+  }
+}
+
+h3 {
+  font-size: 24px;
+  line-height: 24px;
+}
+
+h4 {
+  font-size: 20px;
+  line-height: 21px;
+}
+
+h5 {
+  font-size: 18px;
+  line-height: 21px;
+}
+
+h6 {
+  font-size: 16px;
+  line-height: 19px;
+}
+
+body {
+  display: none;
+  margin: 0;
+  color: $--gray-700;
+  font-family: $--font-roboto;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+  opacity: 1;
+  letter-spacing: 0px;
+  text-align: left;
+}
+
+/* links */
+a:any-link {
+  color: $--primary-675;
+  text-decoration: underline;
+  word-break: break-word;
+  padding: 0;
+  font-weight: 500;
+}
+
+strong {
+  a:not(.button) {
+    font-weight: 700 !important;
+  }
+}
+
+.background-blue-50 {
+  background-color: $--blue-50;
+}
+
+.background-blue-100 {
+  background-color: $--blue-100;
+}
+
+.background-gray-100 {
+  background-color: $--gray-100;
+}
+
+.background-blue-550 {
+  background-color: $--blue-550;
+}
+
+.section.no-padding-top .block {
+  padding-top: 0 !important;
+}
+
+.section.no-padding-bottom .block {
+  padding-bottom: 0 !important;
+}
+
+.section.no-padding-top div[class$='wrapper'] {
+  padding-top: 0 !important;
+}
+
+.section.no-padding-bottom div[class$='wrapper'] {
+  padding-bottom: 0 !important;
+}
+
+.block-padding-top {
+  padding-top: $--spacing-huge;
+  @include for-tablet {
+    padding-top: $--spacing-jumbo;
+  }
+  @include for-laptop {
+    padding-top: $--spacing-max;
+  }
+  @include for-large {
+    padding-top: $--spacing-max;
+  }
+  @include for-xlarge {
+    padding-top: $--spacing-max;
+  }
+}
+
+.block-padding-bottom {
+  padding-bottom: $--spacing-huge;
+  @include for-tablet {
+    padding-bottom: $--spacing-jumbo;
+  }
+  @include for-laptop {
+    padding-bottom: $--spacing-max;
+  }
+  @include for-large {
+    padding-bottom: $--spacing-max;
+  }
+  @include for-xlarge {
+    padding-bottom: $--spacing-max;
+  }
+}
+
+.section.eight-column {
+  @include for-xlarge {
+    max-width: 1275px;
+    margin: 0 auto;
+    > div:not(.default-content-wrapper) {
+      width: calc((100% / 12) * 8);
+      margin: 0;
+    }
+  }
+  @include for-large {
+    max-width: 1275px;
+    margin: 0 auto;
+    > div:not(.default-content-wrapper) {
+      width: calc((100% / 12) * 8);
+      margin: 0;
+    }
+  }
+  @include for-laptop {
+    max-width: 1275px;
+    margin: 0 auto;
+    > div:not(.default-content-wrapper) {
+      width: calc((100% / 12) * 8);
+      margin: 0;
+    }
+  }
+  @include for-tablet {
+    width: calc(100% - 72px);
+    margin: auto;
+  }
+  @include for-mobile {
+    width: calc(100% - 32px);
+    margin: auto;
+  }
+}
+
+$max-width: 1275px;
+$child-width: $max-width * 0.6666; // Calculate 66.66% of 1275px
+.section.eight-column-wrapper {
+  width: 100%;
+  div[class$='wrapper'] {
+    .block {
+      width: 100%;
+      padding-bottom: 1px;
+    }
+    @include for-mobile {
+      margin: 0 0 0 16px;
+      width: calc(100% - 32px);
+      padding: 0;
+    }
+    @include for-tablet {
+      width: calc(100% - 72px);
+      padding: 0;
+    }
+    @include for-laptop {
+      padding: 0;
+      .block {
+        margin: 0 0 0 36px;
+        width: calc((100% - 72px) / 12 * 8);
+      }
+    }
+    @include for-large {
+      padding: 0;
+      .block {
+        margin: 0 0 0 52px;
+        width: calc((100% - 120px) / 12 * 8);
+      }
+    }
+    @include for-xlarge {
+      max-width: $max-width;
+      margin: 0 auto;
+      padding: 0;
+      .block {
+        width: $child-width;
+      }
+    }
+  }
+}
+
+.section.img-with-caption {
+  div[class$='wrapper'] {
+    p:has(img) {
+      padding-bottom: 12px;
+      img {
+        display: block;
+      }
+    }
+    p {
+      padding-bottom: 24px;
+      color: $--gray-700;
+      font-family: $--font-roboto;
+      font-size: 12px;
+      font-style: italic;
+      font-weight: 400;
+      line-height: 20px;
+    }
+  }
+}
+
+.section.inline-quiz {
+  .default-content-wrapper {
+    ol + p,
+    ul + p {
+      padding-left: 55px;
+    }
+    ol,
+    ul {
+      padding-bottom: 12px;
+    }
+  }
+}
+
+p[dir='rtl'],
+div[dir='rtl'] {
+  text-align: right !important;
+}

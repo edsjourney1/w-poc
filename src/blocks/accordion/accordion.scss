@@ -1,0 +1,348 @@
+@import '../../styles/include/_mq.scss';
+@import '../../styles/include/_tokens.scss';
+
+main {
+  .section {
+    .accordion-wrapper {
+      margin: 0 auto;
+    }
+  }
+}
+.accordion-wrapper {
+  ol,
+  ul {
+    margin: 0.8em 0;
+    li {
+      margin-top: 12px;
+      a {
+        color: $--blue-675;
+        font-weight: 500;
+      }
+      span.icon {
+        margin: 0 2px 0 5px;
+        width: auto;
+        height: auto;
+        i {
+          font-size: 16px;
+          color: $--blue-675;
+        }
+      }
+      span.icon.icon-light--phone,
+      span.icon.icon-regular--phone,
+      span.icon.icon-phone,
+      span.icon.icon-solid--phone {
+        margin: 0 2px 0 2px;
+      }
+    }
+  }
+  padding: $--spacing-max 0;
+  @include for-large {
+    padding: $--spacing-max $--spacing-xl $--spacing-max $--spacing-xl;
+  }
+  @include for-laptop {
+    padding: $--spacing-max $--spacing-xl;
+  }
+  @include for-tablet {
+    padding: $--spacing-jumbo $--spacing-xl;
+  }
+  @include for-mobile {
+    padding: $--spacing-huge $--spacing-m;
+  }
+  .accordion-heading {
+    font-family: $--font-museo;
+    font-size: 32px;
+    line-height: $--spacing-xl;
+    font-weight: 700;
+    margin-top: 0;
+    margin-bottom: $--spacing-huge;
+    color: $--gray-700;
+    &:has(a) {
+      color: $--blue-550;
+    }
+    span.icon {
+      i {
+        font-size: 32px;
+      }
+    }
+    @include for-tablet {
+      margin-bottom: $--spacing-xxl;
+      font-size: 28px;
+      span.icon {
+        i {
+          font-size: 28px;
+        }
+      }
+    }
+    @include for-mobile {
+      margin-bottom: $--spacing-xl;
+      font-size: 28px;
+      span.icon {
+        i {
+          font-size: 28px;
+        }
+      }
+    }
+  }
+
+  .accordion {
+    font-family: $--font-roboto;
+    details {
+      border-top: 2px solid $--gray-225;
+      @include for-laptop {
+        width: 100%;
+      }
+      @include for-tablet {
+        width: 100%;
+      }
+      @include for-mobile {
+        width: 100%;
+      }
+      p {
+        margin: 0;
+        text-decoration: underline;
+        font-size: 18px;
+        font-weight: 700;
+        span.icon {
+          i {
+            font-size: 18px;
+          }
+        }
+      }
+      .item-description {
+        font-size: 16px;
+        line-height: 24px;
+        font-weight: 400;
+        color: $--gray-700;
+        text-decoration: none;
+        padding-top: 8px;
+        span.icon {
+          margin: 0 2px 0 5px;
+          width: auto;
+          height: auto;
+          i {
+            font-size: 16px;
+          }
+        }
+        span.icon.icon-light--phone,
+        span.icon.icon-regular--phone,
+        span.icon.icon-phone,
+        span.icon.icon-solid--phone {
+          margin: 0 2px 0 2px;
+        }
+      }
+      .accordion-item-body {
+        p {
+          font-size: 16px;
+          font-weight: 400;
+          line-height: $--spacing-l;
+          color: $--gray-700;
+          text-decoration: none;
+          a {
+            font-weight: 500;
+          }
+          span.icon {
+            width: auto;
+            height: auto;
+            margin: 0 2px 0 5px;
+            i {
+              font-size: 16px;
+            }
+          }
+          &:has(a) {
+            margin-top: 12px;
+          }
+          &:not(.button-container) {
+            a {
+              color: $--blue-675;
+            }
+            span.icon {
+              width: auto;
+              height: auto;
+              margin: 0 2px 0 5px;
+              i {
+                color: $--blue-675;
+              }
+            }
+            span.icon.icon-light--phone,
+            span.icon.icon-regular--phone,
+            span.icon.icon-phone,
+            span.icon.icon-solid--phone {
+              margin: 0 2px 0 2px;
+            }
+          }
+          &:not(:only-child) {
+            margin-bottom: 12px;
+          }
+          &:last-child {
+            margin-bottom: 0;
+          }
+          span.icon.icon-light--phone,
+          span.icon.icon-regular--phone,
+          span.icon.icon-phone,
+          span.icon.icon-solid--phone {
+            margin: 0 2px 0 2px;
+          }
+        }
+        p.button-container {
+          display: inline-flex;
+          padding: 0 24px 12px 0;
+          span.icon{
+            margin: 0 12px 0 0;
+          }
+          &:not(:has(strong, em)) {
+            padding: 0;
+            margin: 0;
+            display: block;
+          }
+        }
+        ol > li:first-child:only-child {
+          all: unset;
+        }
+      }
+      summary {
+        position: relative;
+        padding: $--spacing-l 68px $--spacing-l $--spacing-l;
+        background-color: unset !important;
+        cursor: pointer;
+        list-style: none;
+        overflow: auto;
+        transition: background-color 0.2s;
+        color: $--primary-675;
+        &:focus,
+        &:hover {
+          background-color: var(--light-color);
+        }
+
+        &::-webkit-details-marker {
+          display: none;
+        }
+
+        &::after {
+          content: '';
+          position: absolute;
+          top: 45%;
+          right: 24px;
+          transform: translateY(-50%) rotate(135deg);
+          width: 10px;
+          height: 10px;
+          border: 2px solid;
+          border-width: 2px 2px 0 0;
+          transition: transform 0.2s;
+        }
+        .item-title {
+          &:has(span.icon) {
+            span {
+              margin: 0 2px 0 5px;
+              width: auto;
+              height: auto;
+              i {
+                font-size: 18px;
+              }
+            }
+            span.icon.icon-light--phone,
+            span.icon.icon-regular--phone,
+            span.icon.icon-phone,
+            span.icon.icon-solid--phone {
+              margin: 0 2px 0 2px;
+            }
+          }
+        }
+      }
+      &[open] {
+        summary {
+          background-color: unset;
+          &::after {
+            transform: translateY(-50%) rotate(-45deg);
+            top: 45%;
+          }
+        }
+        .accordion-item-body {
+          padding: $--spacing-l;
+          padding-top: 0;
+        }
+      }
+    }
+  }
+}
+.nine-column-layout.accordion-container {
+  .accordion-wrapper {
+    details {
+      width: calc(((100% / 12) * 9) - 10px);
+      @include for-large {
+        width: calc(((100% / 12) * 9) - 10px);
+      }
+      @include for-laptop {
+        width: calc((100% / 12) * 9);
+      }
+      @include for-tablet {
+        width: 100%;
+      }
+      @include for-mobile {
+        width: 100%;
+      }
+    }
+  }
+}
+.eight-column-layout.accordion-container {
+  .accordion-wrapper {
+    details {
+      width: calc(((100% / 12) * 8));
+      @include for-large {
+        width: calc(((100% / 12) * 8));
+      }
+      @include for-laptop {
+        width: calc((100% / 12) * 8);
+      }
+      @include for-tablet {
+        width: 100%;
+      }
+      @include for-mobile {
+        width: 100%;
+      }
+    }
+  }
+}
+.six-column-layout.accordion-container {
+  max-width: 1275px;
+  margin: 0 auto;
+  display: flex;
+  gap: 30px;
+  @include for-tablet {
+    flex-direction: column;
+  }
+  @include for-mobile {
+    flex-direction: column;
+  }
+  .accordion-wrapper {
+    width: 50%;
+    padding: $--spacing-max 0 $--spacing-max 0;
+    @include for-large {
+      padding: $--spacing-max $--spacing-xl $--spacing-max $--spacing-xl;
+    }
+    @include for-laptop {
+      padding: $--spacing-max 0 $--spacing-max $--spacing-xl;
+    }
+    @include for-tablet {
+      padding: $--spacing-jumbo 0;
+      width: calc(100% - 72px);
+    }
+    @include for-mobile {
+      width: calc(100% - 32px);
+      padding: $--spacing-huge 0;
+    }
+    .accordion-heading {
+      margin-bottom: $--spacing-huge;
+      @include for-tablet {
+        margin-bottom: $--spacing-xxl;
+      }
+      @include for-mobile {
+        margin-bottom: $--spacing-xl;
+      }
+    }
+    &:nth-child(2) {
+      @include for-laptop {
+        padding: $--spacing-max 38px $--spacing-max 0;
+      }
+    }
+  }
+}

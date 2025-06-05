@@ -1,0 +1,18 @@
+@import '../../styles/include/_mq.scss';
+@import '../../styles/include/_tokens.scss';
+
+.divider-line {
+  p {
+    margin: 0;
+  }
+  hr {
+    border-color: $--gray-100;
+    border-width: 1px 0 1px 0;
+    margin: 0;
+  }
+  &-dark {
+    hr {
+      border-color: $--blue-50;
+    }
+  }
+}

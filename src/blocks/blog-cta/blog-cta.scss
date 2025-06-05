@@ -1,0 +1,216 @@
+@import '../../styles/include/_mq.scss';
+@import '../../styles/include/_tokens.scss';
+
+.blog-cta-wrapper {
+  padding-top: 24px;
+  padding-bottom: 24px;
+  // margin: auto;
+  @include for-xlarge {
+    width: 43.7%;
+    .blog-cta-body {
+      margin: auto;
+      width: 71.75%;
+    }
+    .button-container {
+      a {
+        padding: 10px 34px;
+      }
+    }
+  }
+
+  @include for-large {
+    width: 43.7%;
+    .blog-cta-body {
+      margin: auto;
+      width: 71.75%;
+    }
+    .button-container {
+      a {
+        padding: 10px 34px;
+      }
+    }
+  }
+  @include for-laptop {
+    width: 77.05%;
+    .blog-cta-body {
+      margin: auto;
+      width: 79.21%;
+    }
+    .button-container {
+      a {
+        padding: 10px 28px;
+      }
+    }
+  }
+  @include for-tablet {
+    width: 92.96%;
+    .blog-cta-body {
+      margin: auto;
+      width: 65.7%;
+    }
+    .button-container {
+      a {
+        padding: 10px 34px;
+      }
+    }
+  }
+  @include for-tablet-smallest {
+    width: 85.03%;
+    .button-container {
+      a {
+        padding: 10px 34px;
+      }
+    }
+  }
+
+  @include for-mobile {
+    width: 91.85%;
+    .button-container {
+      a {
+        padding: 10px 34px;
+      }
+    }
+  }
+}
+
+.blog-cta {
+  * {
+    text-align: center;
+  }
+  color: rgba(75, 76, 77, 1);
+  margin: auto;
+  border-bottom: 8px solid $--gray-100;
+  border-top: 8px solid $--gray-100;
+  padding: 52px 0;
+  text-align: center;
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin: 0 0 12px 0;
+    opacity: 1;
+    letter-spacing: 0px;
+    text-align: center;
+    .icon {
+      height: auto;
+      width: auto;
+      margin-left: 5px;
+      margin-right: 2px;
+    }
+    .icon-phone,
+    .icon-solid--phone,
+    .icon-regular--phone,
+    .icon-light--phone {
+      margin-left: 2px;
+      margin-right: 2px;
+    }
+  }
+  h2 {
+    font-family: $--font-museo;
+    font-size: 32px;
+    line-height: 38px;
+    font-weight: 600;
+    .icon {
+      > i {
+        font-size: 32px;
+      }
+    }
+  }
+  h3 {
+    .icon {
+      > i {
+        font-size: 24px;
+      }
+    }
+  }
+  h4 {
+    .icon {
+      > i {
+        font-size: 20px;
+      }
+    }
+  }
+  h5 {
+    .icon {
+      > i {
+        font-size: 18px;
+      }
+    }
+  }
+  h6 {
+    .icon {
+      > i {
+        font-size: 16px;
+      }
+    }
+  }
+  p {
+    font-weight: 400;
+    text-align: center;
+    line-height: 24px;
+    letter-spacing: 0px;
+    .icon {
+      height: auto;
+      width: auto;
+      margin-left: 5px;
+      margin-right: 2px;
+      > i {
+        font-size: inherit;
+      }
+    }
+    .icon-phone,
+    .icon-solid--phone,
+    .icon-regular--phone,
+    .icon-light--phone {
+      margin-left: 2px;
+      margin-right: 2px;
+    }
+
+    &:last-child {
+      margin: 0;
+    }
+  }
+  &-btn {
+    &:not(:has(div.button-container)) {
+      p:not(.button-container) {
+        margin: 24px 0 0 0;
+      }
+    }
+    .button-container {
+      margin: 24px 0 0 0;
+      justify-content: center;
+      p {
+        opacity: 1;
+        font-family: $--font-roboto;
+        font-size: 18px;
+        letter-spacing: -0.18px;
+        text-align: center;
+        line-height: 28px;
+        justify-content: center;
+      }
+
+      a {
+        display: inline-block;
+        border-radius: 2px;
+        border: 2px solid $--blue-675;
+
+        text-decoration: none;
+        line-height: 28px;
+        &:focus {
+          outline: 3px dashed $--orange-450;
+        }
+      }
+      .icon {
+        height: auto;
+        width: auto;
+        margin-left: 0;
+        margin-right: 12px;
+        > i {
+          font-size: inherit;
+        }
+      }
+    }
+  }
+}

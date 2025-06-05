@@ -1,0 +1,1 @@
+export default async function decorate(e){var[t,n]=[...e.children].map(e=>e.firstElementChild),a=document.createElement("blockquote");t.className="quote-quotation",a.append(t),n&&(n.className="quote-attribution",a.append(n),n.querySelectorAll("em").forEach(e=>{var t=document.createElement("cite");t.innerHTML=e.innerHTML,e.replaceWith(t)})),e.innerHTML="",e.append(a)}

@@ -1,0 +1,1 @@
+import{analyticsModal}from"../../scripts/analytics.js";let popupDataAnalytics=(a,o,l)=>{analyticsModal({modal_action:a,modal_location:window.location.href,modal_name:o,modal_impression:l})};export default popupDataAnalytics;

@@ -1,0 +1,103 @@
+{
+  "copyMode": [
+    {
+      "mimeType": "image/*",
+      "value": "reference"
+    },
+    {
+      "mimeType": "video/*",
+      "value": "reference"
+    },
+    {
+      "mimeType": "application/pdf",
+      "value": "reference"
+    }
+  ],
+  "assetDomainMapping": {
+    "delivery-p140377-e1433477.adobeaemcloud.com": "digital-assets-dev.wellmark.com",
+    "delivery-p140377-e1434101.adobeaemcloud.com": "digital-assets-stage.wellmark.com",
+    "delivery-p140377-e1434145.adobeaemcloud.com": "digital-assets.wellmark.com"
+  },
+  "filterSchema": [
+    {
+      "header": "File Types",
+      "groupKey": "FileTypeGroup",
+      "fields": [
+        {
+          "excludeTags": ["image/*", "video/*", "application/pdf"],
+          "element": "checkbox",
+          "name": "type",
+          "defaultValue": ["image/*", "video/*"],
+          "options": [
+            {
+              "label": "Image(s)",
+              "value": "image/*"
+            },
+            {
+              "label": "Video(s)",
+              "value": "video/*"
+            },
+            {
+              "label": "PDF(s)",
+              "value": "application/pdf"
+            }
+          ],
+          "orientation": "horizontal"
+        }
+      ]
+    },
+    {
+      "fields": [
+        {
+          "columns": 1,
+          "defaultValue": ["approved"],
+          "element": "checkbox",
+          "name": "dam:assetStatus",
+          "options": [
+            {
+              "label": "Approved",
+              "value": "approved"
+            }
+          ],
+          "orientation": "horizontal"
+        }
+      ],
+      "groupKey": "ApprovalStatusGroup",
+      "header": "Approval Status"
+    },
+    {
+      "fields": [
+        {
+          "columns": 1,
+          "defaultValue": ["delivery"],
+          "element": "checkbox",
+          "name": "dam:activationTarget",
+          "options": [
+            {
+              "label": "Public",
+              "value": "delivery"
+            }
+          ]
+        }
+      ],
+      "groupKey": "AssetActivationGroup",
+      "header": "Assets for Delivery"
+    },
+    {
+      "header": "Assets Tags",
+      "groupKey": "AssetTagsGroup",
+      "fields": [
+        {
+          "element": "taggroup",
+          "name": "property=metadata.application.xcm:keywords.id",
+          "options": [
+            {
+              "label": "Employee",
+              "value": "asset-type:photo/employee"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

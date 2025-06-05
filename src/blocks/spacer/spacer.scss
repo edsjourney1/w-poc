@@ -1,0 +1,87 @@
+@import '../../styles/include/_mq.scss';
+@import '../../styles/include/_tokens.scss';
+
+.sidekick-library {
+  .spacer {
+    background-color: $--gray-100;
+    margin: 10px auto;
+    max-width: 800px;
+  }
+}
+.spacer {
+  // background-color: $--gray-500;
+  // margin: 10px 0;
+  color: transparent;
+  font-size: 0;
+  line-height: 0;
+  p {
+    margin: 0;
+  }
+
+  &-xxs {
+    height: 4px;
+  }
+  &-xs {
+    height: 8px;
+  }
+  &-s {
+    height: 12px;
+  }
+  &-m {
+    height: 16px;
+  }
+  &-l {
+    height: 24px;
+  }
+  &-xl {
+    height: 36px;
+  }
+  &-xxl {
+    height: 52px;
+  }
+  &-huge {
+    height: 72px;
+    @include for-large {
+      height: 72px;
+    }
+    @include for-laptop {
+      height: 72px;
+    }
+    @include for-tablet {
+      height: 72px;
+    }
+    @include for-mobile {
+      height: 52px;
+    }
+  }
+  &-jumbo {
+    height: 96px;
+    @include for-large {
+      height: 96px;
+    }
+    @include for-laptop {
+      height: 96px;
+    }
+    @include for-tablet {
+      height: 96px;
+    }
+    @include for-mobile {
+      height: 72px;
+    }
+  }
+  &-max {
+    height: 120px;
+    @include for-large {
+      height: 120px;
+    }
+    @include for-laptop {
+      height: 120px;
+    }
+    @include for-tablet {
+      height: 96px;
+    }
+    @include for-mobile {
+      height: 72px;
+    }
+  }
+}

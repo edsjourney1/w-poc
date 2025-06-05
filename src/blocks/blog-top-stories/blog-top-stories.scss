@@ -1,0 +1,107 @@
+@import '../../styles/include/_mq.scss';
+@import '../../styles/include/_tokens.scss';
+
+.blog-top-stories {
+  .top-heading {
+    padding-bottom: 52px;
+    @include for-mobile {
+      flex-direction: column;
+      gap: 24px;
+      padding-top: 36px;
+    }
+    @include for-tablet {
+      flex-direction: column;
+      gap: 24px;
+      padding-top: 36px;
+    }
+    > .stories-title {
+      margin: 0;
+      &:has(a) {
+        color: $--blue-675;
+      }
+    }
+  }
+  .top-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 52px;
+    > .top-card-div {
+      display: flex;
+      width: 100%;
+      gap: 30px;
+      @include for-tablet {
+        flex-direction: column;
+        gap: 0px;
+      }
+      @include for-mobile {
+        flex-direction: column;
+        gap: 0px;
+      }
+      > .content-div {
+        width: 100%;
+        > .card-title {
+          color: $--blue-675;
+          text-decoration: underline;
+          margin: 0;
+          padding-bottom: 8px;
+          .icon {
+            &.icon-phone,
+            &.icon-light--phone,
+            &.icon-regular--phone,
+            &.icon-solid--phone {
+              margin: 0 2px 0 2px;
+            }
+            height: auto;
+            width: auto;
+            margin: 0 2px 0 5px;
+            i {
+              font-size: 24px;
+            }
+          }
+        }
+
+        > .date-div {
+          display: flex;
+          position: relative;
+          gap: 13px;
+          padding-bottom: 8px;
+          > .date {
+            margin: 0;
+            &::after {
+              content: '•';
+              position: absolute;
+              left: 90px;
+              @include for-mobile {
+                left: 88px;
+              }
+              @include for-tablet {
+                left: 88px;
+              }
+              top: 35%;
+              transform: translateY(-50%);
+              font-size: 16px;
+              color: $--gray-700;
+            }
+          }
+          > .read-time {
+            margin: 0;
+          }
+        }
+        > .category-list {
+          margin: 0;
+          overflow-wrap: break-word;
+          > a {
+            font-weight: 500;
+            color: $--blue-675;
+            text-decoration: underline;
+            margin-right: 12px;
+            white-space: nowrap;
+            &:last-child {
+              margin: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,13 @@
+@media print {
+    .article-page {
+        header, footer {
+            display: none;
+        }
+        .blog-social-links {
+            display: none;
+        }
+        .blog-article-listing-curated-wrapper {
+            display: none;
+        }
+    }
+}

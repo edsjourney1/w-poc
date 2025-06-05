@@ -1,0 +1,19 @@
+@import '../../styles/include/tokens.scss';
+@import '../../styles/include/mq.scss';
+
+.sidekick-library {
+  .fragment.block {
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      th {
+        background-color: $--gray-100;
+      }
+      th,
+      td {
+        border: 1px solid $--black;
+        padding: 6px 12px;
+      }
+    }
+  }
+}

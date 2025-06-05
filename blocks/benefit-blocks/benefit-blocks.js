@@ -1,0 +1,1 @@
+export default function decorate(e){var d=[...e.children].slice(0,1),c=document.createElement("div"),c=(c.classList.add("block-left"),e.prepend(c),c.append(d[0]),[...e.children].length),d=[...e.children].slice(1,c),c=document.createElement("div");c.classList.add("block-right"),e.append(c),d&&(c.append(...d),c.querySelectorAll("div:empty").forEach(e=>e.remove()))}

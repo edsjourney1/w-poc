@@ -1,0 +1,1 @@
+export default function decorate(e){(e.querySelector("div:first-child")?.querySelector("div > *"))?.setAttribute("aria-hidden",!0)}

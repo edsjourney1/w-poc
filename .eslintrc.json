@@ -1,0 +1,41 @@
+{
+  "env": {
+    "browser": true,
+    "node": true
+  },
+  "ignorePatterns": [
+    "blocks/**",
+    "coverage/**",
+    "plugins/**",
+    "scripts/**",
+    "tools/**",
+    "gulpfile.cjs"
+  ],
+  "extends": ["airbnb-base", "prettier", "plugin:node/recommended"],
+  "plugins": ["prettier"],
+  "rules": {
+    "curly": "error",
+    "eqeqeq": "error",
+    "import/extensions": [2, "always"],
+    "import/no-extraneous-dependencies": ["error", { "devDependencies": true }],
+    "import/prefer-default-export": 0,
+    "indent": ["error", 2, { "SwitchCase": 1, "ignoredNodes": ["TemplateLiteral > *"] }],
+    "no-console": "off",
+    "no-param-reassign": [0, "always"],
+    "no-unused-vars": ["error", { "argsIgnorePattern": "^_" }],
+    "node/no-unsupported-features/es-syntax": [0, "always"],
+    "quotes": ["error", "single"],
+    "semi": ["error", "always"]
+  },
+  "parserOptions": {
+    "ecmaVersion": 2020
+  },
+  "overrides": [
+    {
+      "files": ["src/**/*.test.js"],
+      "env": {
+        "jest": true
+      }
+    }
+  ]
+}

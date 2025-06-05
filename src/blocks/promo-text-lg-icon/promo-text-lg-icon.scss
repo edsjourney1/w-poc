@@ -1,0 +1,204 @@
+@import '../../styles/include/_mq.scss';
+@import '../../styles/include/_tokens.scss';
+
+.promo-text-lg-icon-container {
+  position: relative;
+  z-index: 0;
+}
+.promo-text-lg-icon-wrapper {
+  margin: 0;
+  opacity: 1;
+  background-color: rgba(74, 115, 144, 1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: unset !important;
+  @include for-xlarge {
+    padding: 0 52px;
+  }
+  @include for-large {
+    padding: 0 52px;
+  }
+  @include for-laptop {
+    padding: 0 36px;
+  }
+  @include for-mobile {
+    padding: 0 16px;
+  }
+  @include for-tablet {
+    padding: 0 36px;
+  }
+  > .promo-text-lg-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 1275px;
+    > div {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      justify-content: center;
+      padding: 0;
+      @include for-xlarge {
+        padding: 120px 0px;
+        width: calc(66.66% - 10px);
+      }
+      @include for-large {
+        padding: 120px 0px;
+        width: calc(66.66% - 10px);
+      }
+      @include for-laptop {
+        padding: 120px 0px 120px 0px;
+        width: 83%;
+      }
+      @include for-mobile {
+        padding: 72px 0;
+        width: 100%;
+      }
+      @include for-tablet {
+        padding: 96px 0;
+        width: 100%;
+      }
+      > div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        width: 100%;
+        > .title {
+          opacity: 1;
+          color: $--white;
+          font-family: $--font-museo;
+          font-size: 32px;
+          font-weight: 600;
+          letter-spacing: 0px;
+          text-align: center;
+          padding-bottom: 24px;
+          margin: 0;
+          z-index: 2;
+          width: 100%;
+          .icon {
+            &.icon-light--phone,
+            &.icon-regular--phone,
+            &.icon-solid--phone,
+            &.icon-phone {
+              margin: 0 2px 0 2px;
+            }
+            height: auto;
+            width: auto;
+            margin: 0 2px 0 5px;
+            i {
+              font-size: 32px;
+            }
+          }
+          @include for-tablet {
+            font-size: 32px;
+          }
+          @include for-mobile {
+            padding-bottom: 16px;
+            font-size: 28px;
+          }
+        }
+        > p {
+          position: absolute;
+          margin: 0;
+          @include for-xlarge {
+            bottom: -210px;
+          }
+          @include for-large {
+            bottom: -210px;
+          }
+          @include for-laptop {
+            bottom: -210px;
+          }
+          @include for-tablet {
+            bottom: -200px;
+          }
+          @include for-mobile {
+            bottom: -190px;
+          }
+          > span {
+            height: 100%;
+            width: 100%;
+            > img {
+              height: 100%;
+              width: 100%;
+            }
+            > i {
+              color: #426781;
+              @include for-xlarge {
+                font-size: 345px;
+              }
+              @include for-large {
+                font-size: 345px;
+              }
+              @include for-laptop {
+                font-size: 345px;
+              }
+              @include for-mobile {
+                font-size: 299px;
+              }
+              @include for-tablet {
+                font-size: 299px;
+              }
+            }
+          }
+        }
+        .svg {
+          bottom: -175px;
+          @include for-tablet {
+            bottom: -155px;
+          }
+          @include for-mobile {
+            display: none;
+          }
+        }
+        .none {
+          display: none;
+        }
+      }
+      > .button {
+        margin: 0;
+        border-radius: 2px;
+        border: none;
+        padding: 12px 36px;
+        @include for-mobile {
+          width: 100%;
+        }
+        z-index: 2;
+      }
+      > .description {
+        opacity: 1;
+        color: $--white;
+        font-family: $--font-roboto;
+        font-size: 16px;
+        font-weight: 400;
+        letter-spacing: 0px;
+        text-align: center;
+        line-height: 24px;
+        margin: 0;
+        padding-bottom: 36px;
+        z-index: 2;
+        width: 100%;
+        .icon {
+          &.icon-light--phone,
+          &.icon-solid--phone,
+          &.icon-regular--phone,
+          &.icon-phone {
+            margin: 0 2px 0 2px;
+          }
+          height: auto;
+          width: auto;
+          margin: 0 2px 0 5px;
+          i {
+            font-size: 16px;
+          }
+        }
+        @include for-mobile {
+          padding-bottom: 24px;
+        }
+      }
+    }
+  }
+}

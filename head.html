@@ -1,0 +1,102 @@
+<!-- Anti-clickjacking -->
+<script>
+  var style = document.createElement('style');
+  style.type = 'text/css';
+  style.id = 'antiClickjack';
+  if ('cssText' in style) {
+    style.cssText = 'body {display:none !important;}';
+  } else {
+    style.innerHTML = 'body {display:none !important;}';
+  }
+  if (window.top !== window.self) {
+    document.head.append(style);
+  }
+
+  window.addEventListener('pageshow', function (event) {
+    setTimeout(() => {
+      var historyTraversal =
+        event.persisted ||
+        (typeof window.performance != 'undefined' && window.performance.navigation.type === 2);
+      if (historyTraversal && window.localStorage.getItem('landedFromExternal') === 'true') {
+        window.localStorage.removeItem('landedFromExternal');
+        window.location.reload();
+      } else {
+        window.localStorage.removeItem('landedFromExternal');
+      }
+    }, 0);
+  });
+</script>
+
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<link rel="stylesheet" href="/styles/fonts.css" />
+
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/@tarekraafat/autocomplete.js@10.2.9/dist/css/autoComplete.min.css"
+/>
+<link rel="stylesheet" href="/styles/styles.css" />
+<link rel="stylesheet" href="/styles/print.css" />
+
+<!-- inject:dtm -->
+<script src='https://assets.adobedtm.com/63b00f92ccdd/fc7867b8b4e7/launch-418f1c5afcef-development.min.js'></script>
+<!-- endinject -->
+<!-- inject:marketo -->
+<script src='https://899-BTB-436.mktoweb.com/js/forms2/js/forms2.min.js'></script>
+<script src='https://899-BTB-436.mktoweb.com/rs/899-BTB-436/images/teknkl-formsplus-core-1.0.8.js?version=0' id='teknkl-FormsPlus-Core-1.x'></script>
+<script src='https://899-BTB-436.mktoweb.com/rs/899-BTB-436/images/teknkl-simpledto-2.0.4.js?version=0' id='teknkl-SimpleDTO-2.x'></script>
+<!-- endinject -->
+<!-- inject:recaptcha -->
+<script src="https://www.google.com/recaptcha/api.js?render=6LdD-rkZAAAAAHA-MgYyZ_FoxcU9r2uJNOk9uwni"></script>
+<!-- endinject -->
+<script
+  defer
+  type="text/javascript"
+  src="https://rum.hlx.page/.rum/@adobe/helix-rum-js@^2/dist/rum-standalone.js"
+></script>
+<script
+  src="https://cdn.jsdelivr.net/npm/@tarekraafat/autocomplete.js@10.2.9/dist/autoComplete.min.js"
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+></script>
+<script
+  src="https://cdn.jsdelivr.net/npm/@floating-ui/core@1.6.9"
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+></script>
+<script
+  src="https://cdn.jsdelivr.net/npm/@floating-ui/dom@1.6.13"
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+></script>
+<script
+  src="https://cdn.jsdelivr.net/npm/jszip@3.10.1/dist/jszip.min.js"
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+></script>
+<script src="/scripts/head.js" type="module"></script>
+<script src="/scripts/aem.js" type="module"></script>
+<script src="/scripts/scripts.js" type="module"></script>
+
+<!-- RTP tag -->
+<!-- <script type="text/javascript">
+  (function (c, h, a, f, i, l, e) {
+    c[a] =
+      c[a] ||
+      function () {
+        (c[a].q = c[a].q || []).push(arguments);
+      };
+    c[a].a = i;
+    c[a].l = l;
+    c[a].e = e;
+    var g = h.createElement('script');
+    g.async = true;
+    g.type = 'text/javascript';
+    g.src = f + '?aid=' + i;
+    var b = h.getElementsByTagName('script')[0];
+    b.parentNode.insertBefore(g, b);
+  })(window, document, 'rtp', '//abrtp1-cdn.marketo.com/rtp-api/v1/rtp.js', 'wellmarksandbox:0');
+  rtp('send', 'view');
+  rtp('get', 'campaign', true);
+</script> -->
+<!-- End of RTP tag -->

@@ -1,0 +1,359 @@
+@import '../../styles/include/_mq.scss';
+@import '../../styles/include/_tokens.scss';
+
+.benefit-blocks-container {
+  .benefit-blocks-wrapper {
+    @include for-large {
+      width: calc(100% - 100px);
+    }
+    .benefit-blocks {
+      display: flex;
+      align-items: stretch;
+      gap: calc(((100% - (11 * 30px)) / 12) + 50px);
+      @include for-xlarge {
+        padding: $--spacing-max 0 0 0;
+      }
+      @include for-large {
+        padding: $--spacing-max 0 0 0;
+      }
+      @include for-laptop {
+        padding: $--spacing-max $--spacing-xl;
+      }
+      @include for-tablet {
+        flex-direction: column;
+        padding: $--spacing-jumbo $--spacing-xl;
+        gap: unset;
+      }
+      @include for-mobile {
+        flex-direction: column;
+        padding: $--spacing-huge $--spacing-m;
+        gap: unset;
+      }
+      .block-left {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        flex: 1;
+        border-radius: 4px;
+        background-color: $--blue-50;
+        width: calc((100% - 60px) / 12 * 4);
+        padding: $--spacing-max 0;
+        margin-bottom: 69px;
+        ul,
+        ol {
+          margin: 0 0 12px 0;
+        }
+        @include for-laptop {
+          padding: 88px 0;
+          margin: 0;
+        }
+        @include for-tablet {
+          width: 100%;
+          padding: $--spacing-jumbo 0;
+          margin: 0;
+        }
+        @include for-mobile {
+          width: 100%;
+          padding: $--spacing-huge 0;
+          margin: 0;
+        }
+        > div {
+          > div {
+            padding: 0 $--spacing-xxl;
+            @include for-laptop {
+              padding: 0 39px;
+            }
+            @include for-tablet {
+              padding: 0 $--spacing-xl 0 $--spacing-xl;
+            }
+            @include for-mobile {
+              padding: 0 $--spacing-xl;
+            }
+            h2 {
+              color: $--gray-700;
+              font-family: $--font-museo;
+              font-size: 32px;
+              line-height: 38px;
+              font-weight: 700;
+              margin: 0;
+              span.icon {
+                i {
+                  font-size: 32px;
+                }
+              }
+              &:has(a) {
+                color: $--blue-550;
+              }
+              @include for-tablet {
+                font-size: 28px;
+                line-height: 33px;
+                span.icon {
+                  i {
+                    font-size: 28px;
+                  }
+                }
+              }
+              @include for-mobile {
+                font-size: 28px;
+                line-height: 33px;
+                span.icon {
+                  i {
+                    font-size: 28px;
+                  }
+                }
+              }
+            }
+            p {
+              color: $--gray-700;
+              font-family: $--font-roboto;
+              font-size: 16px;
+              font-weight: 400;
+              line-height: 24px;
+              margin: 0;
+              padding: $--spacing-l 0 0 0;
+              &:last-child:has(span.icon, a) {
+                padding-top: 36px;
+                padding-bottom: 0;
+                @include for-mobile {
+                  padding-top: $--spacing-l;
+                }
+                @include for-tablet {
+                  padding-top: $--spacing-l;
+                }
+              }
+              span.icon {
+                i {
+                  font-size: 16px;
+                }
+              }
+              @include for-mobile {
+                padding: $--spacing-m 0 0 0;
+              }
+              @include for-tablet {
+                padding: $--spacing-m 0 0 0;
+              }
+            }
+            p:has(a) {
+              a {
+                font-size: 16px;
+                line-height: 19px;
+                font-family: $--font-roboto;
+                font-weight: 500;
+                color: $--blue-675;
+                text-decoration: underline;
+              }
+              span.icon {
+                margin: 0 2px 0 5px;
+                width: auto;
+                height: auto;
+                i {
+                  font-size: 15px;
+                  color: $--blue-675;
+                }
+              }
+              span.icon.icon-light--phone,
+              span.icon.icon-regular--phone,
+              span.icon.icon-phone,
+              span.icon.icon-solid--phone {
+                margin: 0 2px 0 2px;
+              }
+            }
+          }
+        }
+      }
+      .block-right {
+        width: calc((100% / 12) * 7);
+        padding-bottom: $--spacing-max;
+        @include for-laptop {
+          padding-bottom: 51px;
+        }
+        @include for-tablet {
+          width: 100%;
+          padding: 0;
+        }
+        @include for-mobile {
+          width: 100%;
+          padding: 0;
+        }
+        > div {
+          display: flex;
+          gap: calc(((100% - (6 * 30px)) / 7) + 60px);
+          @include for-tablet {
+            gap: 30px;
+          }
+          @include for-mobile {
+            flex-direction: column;
+            gap: unset;
+          }
+          > div {
+            padding-top: $--spacing-xxl;
+            width: calc((100% / 7) * 3);
+            @include for-tablet {
+              width: calc(100% / 2);
+            }
+            @include for-mobile {
+              width: 100%;
+            }
+            h2,
+            h3,
+            h4,
+            h5,
+            h6 {
+              font-family: $--font-roboto;
+              font-size: 24px;
+              line-height: 28px;
+              font-weight: 700;
+              margin: 0;
+              &:has(a) {
+                color: $--blue-675;
+              }
+              span.icon {
+                margin: 0 2px 0 5px;
+                width: auto;
+                height: auto;
+                i {
+                  font-size: 20px;
+                }
+              }
+              span.icon.icon-light--phone,
+              span.icon.icon-regular--phone,
+              span.icon.icon-phone,
+              span.icon.icon-solid--phone {
+                margin: 0 2px 0 2px;
+              }
+            }
+            p {
+              color: $--gray-700;
+              font-family: $--font-roboto;
+              font-size: 16px;
+              font-weight: 400;
+              line-height: 24px;
+              margin: 0;
+              padding-top: $--spacing-s;
+              span.icon {
+                margin: 0 2px 0 5px;
+                width: auto;
+                height: auto;
+                i {
+                  font-size: 16px;
+                }
+              }
+              span.icon.icon-light--phone,
+              span.icon.icon-regular--phone,
+              span.icon.icon-phone,
+              span.icon.icon-solid--phone {
+                margin: 0 2px 0 2px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.benefit-block-four-column.benefit-blocks-container {
+  .benefit-blocks-wrapper {
+    @include for-laptop {
+      width: calc(100% - 72px);
+    }
+    @include for-tablet {
+      width: calc(100% - 72px);
+    }
+    @include for-mobile {
+      width: calc(100% - 32px);
+    }
+    .benefit-blocks.block {
+      padding: $--spacing-max 0;
+      @include for-tablet {
+        padding: $--spacing-jumbo 0;
+      }
+      @include for-mobile {
+        padding: $--spacing-huge 0;
+      }
+      .block-left {
+        margin-bottom: 0;
+        padding: $--spacing-jumbo 0;
+        @include for-mobile {
+          padding: $--spacing-huge 0;
+        }
+      }
+      .block-right {
+        padding: 69px 0 68px 0;
+        @include for-laptop {
+          padding: 88px 0;
+        }
+        @include for-tablet {
+          padding: $--spacing-xxl 0 0 0;
+        }
+        @include for-mobile {
+          padding: 0;
+        }
+        > div:first-child {
+          div {
+            padding-top: 0;
+            @include for-mobile {
+              padding-top: $--spacing-xxl;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.two-column-layout.benefit-blocks-container {
+  .benefit-blocks-wrapper {
+    @include for-laptop {
+      width: calc(100% - 72px);
+    }
+    @include for-tablet {
+      width: calc(100% - 72px);
+    }
+    @include for-mobile {
+      width: calc(100% - 32px);
+    }
+    .benefit-blocks.block {
+      padding: $--spacing-max 0;
+      align-items: center;
+      @include for-tablet {
+        padding: $--spacing-jumbo 0;
+      }
+      @include for-mobile {
+        padding: $--spacing-huge 0;
+      }
+      .block-left {
+        margin-bottom: 0;
+        padding: $--spacing-jumbo 0;
+        @include for-mobile {
+          padding: $--spacing-huge 0;
+        }
+      }
+      .block-right {
+        padding: 0;
+        display: flex;
+        align-items: center;
+        @include for-tablet {
+          padding-top: $--spacing-xxl;
+        }
+        div {
+          div {
+            padding: 0;
+            @include for-mobile {
+              padding-top: $--spacing-xxl;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.background-blue-50 {
+  .block-left {
+    background-color: $--white;
+  }
+}
+.icon-phone,
+.icon-solid--phone {
+  margin: 0 2px 0 2px;
+}

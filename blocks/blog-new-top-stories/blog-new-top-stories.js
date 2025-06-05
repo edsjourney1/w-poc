@@ -1,0 +1,1 @@
+export default async function decorate(e){var r=e.children[0],o=e.children[1],r=(r&&(r.remove(),o.remove()),e.innerHtml="",document.createElement("div")),o=(r.classList.add("blog-wrapper"),e.prepend(r),document.querySelector(".blog-new-stories-wrapper")),e=document.querySelector(".blog-top-stories-wrapper");o&&r.append(o),e&&r.append(e)}

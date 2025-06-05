@@ -1,0 +1,239 @@
+@import '../../styles/include/_mq.scss';
+@import '../../styles/include/_tokens.scss';
+
+.pull-quote-container {
+  .pull-quote-wrapper {
+    .pull-quote.block {
+      margin: 0 auto;
+      @include for-xlarge {
+        width: calc((100% / 12) * 8 - 10px);
+        padding: 24px 0 36px 0;
+      }
+      @include for-large {
+        width: calc((100% / 12) * 8 - 10px);
+        padding: 24px 0 36px 0;
+      }
+      @include for-laptop {
+        width: calc((100% / 12) * 10 - 60px);
+        padding: 24px 0 36px 0;
+      }
+      @include for-tablet {
+        width: calc(100% - 72px);
+        padding: 24px 0;
+      }
+      @include for-mobile {
+        width: calc(100% - 32px);
+        padding: 24px 0;
+      }
+      .main-content {
+        .quote-content {
+          text-align: center;
+          padding: 52px 108px 52px 107px;
+          font-family: $--font-museo;
+          @include for-laptop {
+            padding: 52px 82px;
+          }
+          @include for-tablet {
+            padding: 52px 163px;
+          }
+          @include for-tablet-smallest {
+            padding: 52px 73px;
+          }
+          @include for-mobile {
+            padding: 36px 0;
+          }
+          p:first-child:not(:only-child) {
+            padding-bottom: 24px;
+          }
+          .content {
+            color: $--gray-700;
+            font-size: 32px;
+            line-height: 36px;
+            font-weight: 700;
+            margin: 0;
+            a {
+              font-size: 32px;
+              font-weight: 700;
+              line-height: 36px;
+            }
+            span.icon {
+              margin: 0 2px 0 5px;
+              width: auto;
+              height: auto;
+              i {
+                font-size: 32px;
+              }
+            }
+            span.icon.icon-light--phone,
+            span.icon.icon-regular--phone,
+            span.icon.icon-phone,
+            span.icon.icon-solid--phone {
+              margin: 0 2px 0 2px;
+            }
+            @include for-mobile {
+              font-size: 28px;
+              line-height: 33px;
+              a {
+                font-size: 28px;
+                line-height: 33px;
+                span.icon {
+                  margin-left: 6px;
+                  width: auto;
+                  height: auto;
+                  i {
+                    font-size: 28px;
+                  }
+                }
+                span.icon.icon-light--phone,
+                span.icon.icon-regular--phone,
+                span.icon.icon-phone,
+                span.icon.icon-solid--phone {
+                  margin: 0 2px 0 2px;
+                }
+              }
+            }
+          }
+          .authorname {
+            font-size: 18px;
+            font-weight: 600;
+            line-height: 25px;
+            text-transform: uppercase;
+            margin: 0;
+            span.icon {
+              margin: 0 2px 0 5px;
+              width: auto;
+              height: auto;
+              i {
+                font-size: 18px;
+              }
+            }
+            span.icon.icon-light--phone,
+            span.icon.icon-regular--phone,
+            span.icon.icon-phone,
+            span.icon.icon-solid--phone {
+              margin: 0 2px 0 2px;
+            }
+          }
+          .authorposition {
+            font-size: 16px;
+            line-height: 25px;
+            margin: 0;
+            span.icon {
+              margin: 0 2px 0 5px;
+              width: auto;
+              height: auto;
+              i {
+                font-size: 16px;
+              }
+            }
+            span.icon.icon-light--phone,
+            span.icon.icon-regular--phone,
+            span.icon.icon-phone,
+            span.icon.icon-solid--phone {
+              margin: 0 2px 0 2px;
+            }
+            a {
+              font-size: 16px;
+              color: $--blue-675;
+              span.icon {
+                margin: 0 2px 0 5px;
+                width: auto;
+                height: auto;
+                i {
+                  font-size: 16px;
+                }
+              }
+              span.icon.icon-light--phone,
+              span.icon.icon-regular--phone,
+              span.icon.icon-phone,
+              span.icon.icon-solid--phone {
+                margin: 0 2px 0 2px;
+              }
+            }
+          }
+        }
+        .icon-top,
+        .icon-bottom {
+          position: relative;
+          display: inline-block;
+          width: 100%;
+          text-align: center;
+          span {
+            position: relative;
+            height: 44px;
+            display: inline-block;
+            overflow: hidden;
+            background-color: $--white;
+            z-index: 1;
+            width: 50px;
+            @include for-xlarge{
+              padding: 0 $--spacing-xxl;
+            }
+            @include for-large{
+              padding: 0 $--spacing-xxl;
+            }
+            @include for-laptop{
+              padding: 0 $--spacing-xxl;
+            }
+            @include for-tablet{
+              padding: 0 $--spacing-xxl;
+            }
+            i {
+              color: $--blue-100;
+              font-size: 50px;
+            }
+          }
+          &::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            right: 0;
+            transform: translateY(-50%);
+            width: 342px;
+            height: 8px;
+            background-color: $--blue-100;
+            @include for-laptop {
+              width: 323px;
+            }
+            @include for-tablet {
+              width: 404px;
+            }
+            @include for-tablet-smallest {
+              width: 127px;
+            }
+            @include for-mobile {
+              width: 120px;
+            }
+          }
+          &::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+            width: 342px;
+            height: 8px;
+            background-color: $--blue-100;
+            @include for-laptop {
+              width: 312px;
+            }
+            @include for-tablet {
+              width: 393px;
+            }
+            @include for-tablet-smallest {
+              width: 127px;
+            }
+            @include for-mobile {
+              width: 119px;
+            }
+          }
+        }
+        .icon-bottom {
+          i {
+            transform: scaleX(-1);
+          }
+        }
+      }
+    }
+  }
+}

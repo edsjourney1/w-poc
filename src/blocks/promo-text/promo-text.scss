@@ -1,0 +1,150 @@
+@import '../../styles/include/_mq.scss';
+@import '../../styles/include/_tokens.scss';
+
+.promo-text-wrapper {
+  margin: 0;
+  @include for-xlarge {
+    padding: 120px 52px;
+  }
+  @include for-large {
+    padding: 120px 52px;
+  }
+  @include for-laptop {
+    padding: 120px 36px;
+  }
+  @include for-mobile {
+    padding: 72px 16px;
+  }
+  @include for-tablet {
+    padding: 96px 36px;
+  }
+  > .promo-text {
+    > div {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      justify-content: center;
+      padding: 0;
+      @include for-xlarge {
+        width: calc(66.66% - 10px);
+        margin: 0 auto;
+      }
+      @include for-large {
+        width: calc(66.66% - 10px);
+        margin: 0 auto;
+      }
+      @include for-laptop {
+        width: calc(83.33% - 10px);
+        margin: 0 auto;
+      }
+      @include for-mobile {
+        width: 100%;
+      }
+      @include for-tablet {
+        width: 100%;
+      }
+      > .button {
+        margin: 0;
+        border-radius: 2px;
+        @include for-mobile {
+          width: 100%;
+        }
+      }
+      > .description {
+        opacity: 1;
+        color: $--gray-700;
+        font-family: $--font-roboto;
+        font-size: 16px;
+        font-weight: 400;
+        letter-spacing: 0px;
+        text-align: center;
+        line-height: 24px;
+        margin: 0;
+        padding-bottom: 36px;
+        .icon {
+          &.icon-light--phone,
+          &.icon-solid--phone,
+          &.icon-regular--phone,
+          &.icon-phone {
+            margin: 0 2px 0 2px;
+          }
+          height: auto;
+          width: auto;
+          margin: 0 2px 0 5px;
+          i {
+            font-size: 16px;
+          }
+        }
+        @include for-xlarge {
+          width: 100%;
+        }
+        @include for-large {
+          width: 100%;
+        }
+        @include for-laptop {
+          width: 100%;
+        }
+        @include for-tablet {
+          width: 100%;
+        }
+        @include for-mobile {
+          padding-bottom: 24px;
+          width: 100%;
+        }
+      }
+
+      > .title {
+        opacity: 1;
+        font-family: $--font-museo;
+        font-size: 32px;
+        font-weight: 600;
+        letter-spacing: 0px;
+        text-align: center;
+        padding-bottom: 24px;
+        margin: 0;
+        color: $--gray-700;
+            span.icon {
+              i {
+                font-size: 32px;
+              }
+            }
+            &:has(a) {
+              color: $--blue-550;
+            }
+        .icon {
+          &.icon-light--phone,
+          &.icon-solid--phone,
+          &.icon-regular--phone,
+          &.icon-phone {
+            margin: 0 2px 0 2px;
+          }
+          height: auto;
+          width: auto;
+          margin: 0 2px 0 5px;
+          i {
+            font-size: 32px;
+          }
+        }
+        @include for-xlarge {
+          width: 100%;
+        }
+        @include for-large {
+          width: 100%;
+        }
+        @include for-laptop {
+          width: 100%;
+        }
+        @include for-tablet {
+          width: 100%;
+          font-size: 28px;
+        }
+        @include for-mobile {
+          padding-bottom: 16px;
+          width: 100%;
+          font-size: 28px;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,91 @@
+@import '../../styles/include/_mq.scss';
+@import '../../styles/include/_tokens.scss';
+
+.article-heading-wrapper {
+  @include for-xlarge {
+    padding: 120px 52px;
+  }
+  @include for-large {
+    padding: 120px 52px;
+  }
+  @include for-laptop {
+    padding: 120px 36px;
+  }
+  @include for-mobile {
+    padding: 72px 16px;
+  }
+  @include for-tablet {
+    padding: 96px 36px;
+  }
+  > .article-heading {
+    > div {
+      display: flex;
+      flex-direction: column;
+      padding: 0;
+      @include for-xlarge {
+        width: calc(66.66% - 10px);
+        // yet to find
+      }
+      @include for-large {
+        width: calc(66.66% - 10px);
+        // yet to find
+      }
+      @include for-laptop {
+        width: calc(90% - 15px);
+        // yet to find
+      }
+      @include for-mobile {
+        width: 100%;
+      }
+      @include for-tablet {
+        width: 100%;
+      }
+      > .description {
+        opacity: 1;
+        color: $--gray-700;
+        font-family: $--font-roboto;
+        font-size: 16px;
+        font-weight: 400;
+        letter-spacing: 0px;
+        text-align: left;
+        line-height: 24px;
+        margin: 0;
+        opacity: 1;
+        span.icon {
+          i {
+            font-size: 16px;
+          }
+        }
+      }
+
+      > .title {
+        opacity: 1;
+        font-family: $--font-museo;
+        font-size: 32px;
+        font-weight: 600;
+        letter-spacing: 0px;
+        text-align: left;
+        padding-bottom: 24px;
+        margin: 0;
+        opacity: 1;
+        color: $--gray-700;
+        span.icon {
+          i {
+            font-size: 32px;
+          }
+        }
+        &:has(a) {
+          color: $--blue-550;
+        }
+        @include for-mobile {
+          padding-bottom: 16px;
+          font-size: 28px;
+        }
+        @include for-tablet {
+          padding-bottom: 16px;
+          font-size: 28px;
+        }
+      }
+    }
+  }
+}

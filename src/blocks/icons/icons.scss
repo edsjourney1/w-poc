@@ -1,0 +1,32 @@
+h1 {
+  color: brown;
+}
+
+.row {
+  width: 50vw;
+  display: flex;
+  margin: auto;
+  justify-content: space-between;
+  margin-top: 2vh;
+  div {
+    background-color: #f0f0f0;
+    width: 30%;
+  }
+}
+p {
+  text-align: center;
+}
+span {
+  padding-top: 20px;
+}
+button {
+  font-weight: bold;
+  text-decoration: none;
+  margin: auto;
+  font-size: small;
+  width: 90%;
+  white-space: nowrap;
+  // overflow-x: auto;
+  border: 1px solid black;
+  border: none;
+}

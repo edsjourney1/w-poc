@@ -1,0 +1,68 @@
+@import '../../styles/include/_mq.scss';
+@import '../../styles/include/_tokens.scss';
+
+.tooltip {
+  padding: 16px;
+  &-btn-hidden {
+    display: none;
+  }
+  &-wrapper {
+    * {
+      box-sizing: border-box;
+    }
+
+    background-color: $--white;
+    border-radius: 4px;
+    box-shadow: 1px 2px 9px 1px rgba($--black, 0.2);
+    font-size: 0.9em;
+    left: 0;
+    max-width: 260px !important;
+    opacity: 0;
+    padding: 4px;
+    position: absolute;
+    top: 0;
+    transition: all 0.25s ease;
+    visibility: hidden;
+    width: max-content;
+    z-index: 125;
+    &-active {
+      opacity: 1;
+      visibility: visible;
+    }
+    h6 {
+      margin: 0 0 4px 0;
+    }
+    p {
+      line-height: 1.5;
+      margin: 0 0 16px 0;
+      &:last-child {
+        margin: 0;
+      }
+    }
+  }
+  &-link {
+    background-color: transparent;
+    border: 0;
+    border-bottom-style: dotted;
+    border-bottom-width: 2px;
+    cursor: pointer;
+    display: inline;
+    line-height: inherit;
+    margin: 0;
+    padding: 0;
+    text-decoration: none !important;
+    .icon > i {
+      color: inherit !important;
+    }
+    &:has(.icon > i) {
+      border-bottom: none;
+    }
+  }
+  &-arrow {
+    position: absolute;
+    background: $--white;
+    width: 8px;
+    height: 8px;
+    transform: rotate(45deg);
+  }
+}

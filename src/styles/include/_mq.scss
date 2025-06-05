@@ -1,0 +1,60 @@
+$breakpoint1: 480px;
+$breakpoint2: 752px;
+$breakpoint2-panel: 767px;
+$breakpoint3: 1023px;
+$breakpoint4: 1200px;
+$breakpoint5: 1379px;
+
+// for mobile with upto 767px
+@mixin for-mobile-panel {
+  @media (max-width: $breakpoint2-panel) {
+    @content;
+  }
+}
+
+// for mobile with upto 480px
+@mixin for-mobile {
+  @media (max-width: $breakpoint1) {
+    @content;
+  }
+}
+// for tablet smallest 481 to 752
+@mixin for-tablet-smallest {
+  @media (min-width: calc($breakpoint1 + 0.5px)) and (max-width: calc($breakpoint2 + 0.5px)) {
+    @content;
+  }
+}
+
+// for tablet 481 to 1023
+@mixin for-tablet {
+  @media (min-width: calc($breakpoint1 + 0.5px)) and (max-width: calc($breakpoint3 + 0.5px)) {
+    @content;
+  }
+}
+ 
+// for laptop 1024 to 1200
+@mixin for-laptop {
+  @media (min-width: calc($breakpoint3 + 1px)) and (max-width: $breakpoint4) {
+    @content;
+  }
+}
+ 
+// for 1201 to 1379
+@mixin for-large {
+  @media (min-width: calc($breakpoint4 + 1px)) and (max-width: $breakpoint5) {
+    @content;
+  }
+}
+ 
+//very large screen 1379 +
+@mixin for-xlarge {
+  @media (min-width: calc($breakpoint5)) {
+    @content;
+  }
+}
+//Non-Mobile
+@mixin for-nonmobile {
+  @media (min-width: calc($breakpoint1 + 0.5px)) {
+    @content;
+  }
+}

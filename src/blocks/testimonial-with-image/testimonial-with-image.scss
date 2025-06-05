@@ -1,0 +1,340 @@
+@import '../../styles/include/_mq.scss';
+@import '../../styles/include/_tokens.scss';
+.section.testimonial-with-image-container {
+  font-family: $--font-roboto;
+  .testimonial-with-image-wrapper {
+    padding: $--spacing-max $--spacing-xxl;
+    text-align: center;
+    @include for-xlarge {
+      padding: $--spacing-max 0;
+    }
+    @include for-large {
+      padding: $--spacing-max 0;
+    }
+    @include for-tablet {
+      padding: $--spacing-jumbo $--spacing-xl 87px $--spacing-xl;
+    }
+    @include for-mobile {
+      padding: $--spacing-huge $--spacing-m;
+    }
+    @include for-laptop {
+      padding: $--spacing-max $--spacing-xl;
+    }
+    span.icon {
+      margin: 0 2px 0 5px;
+      width: auto;
+      height: auto;
+    }
+    span.icon.icon-light--phone,
+    span.icon.icon-regular--phone,
+    span.icon.icon-phone,
+    span.icon.icon-solid--phone {
+      margin: 0 2px 0 2px;
+    }
+    h2 {
+      font-family: $--font-museo;
+      font-size: 32px;
+      line-height: 38px;
+      font-weight: 700;
+      margin: 0;
+      margin-bottom: $--spacing-huge;
+      text-align: center;
+      color: $--gray-700;
+      &:has(a) {
+        color: $--blue-550;
+      }
+      span.icon {
+        i{
+          font-size: 32px;
+        }
+      }
+      @include for-tablet {
+        margin-bottom: $--spacing-xxl;
+      }
+      @include for-mobile {
+        margin-bottom: $--spacing-xl;
+      }
+    }
+    .testimonial-link {
+      font-size: 16px;
+      line-height: 22px;
+      font-weight: 500;
+      color: $--primary-675;
+      text-decoration: underline;
+      span.icon {
+        i{
+          font-size: 16px;
+        }
+      }
+      @include for-tablet {
+        margin-top: $--spacing-m;
+      }
+      @include for-mobile {
+        margin-top: $--spacing-s;
+      }
+    }
+    .link-img {
+      display: inline-block;
+      vertical-align: middle;
+      width: 15px;
+      height: 15px;
+      line-height: 1;
+      i {
+        color: $--blue-675;
+        font-size: 15px;
+      }
+    }
+    .testimonial-with-image {
+      ul {
+        padding-left: 0;
+        @include for-tablet {
+          flex-direction: column;
+          align-items: center;
+        }
+        @include for-mobile {
+          flex-direction: column;
+        }
+        li {
+          list-style-type: none;
+          text-align: left;
+          color: $--gray-700;
+          display: flex;
+          gap: 30px;
+          align-items: stretch;
+          @include for-xlarge {
+            max-height: 600px;
+          }
+          @include for-large {
+            padding: 0 $--spacing-xl;
+            max-height: 600px;
+          }
+          @include for-laptop {
+            max-height: 600px;
+          }
+          @include for-tablet {
+            flex-direction: column-reverse;
+            gap: 36px;
+          }
+          @include for-mobile {
+            flex-direction: column-reverse;
+            gap: 24px;
+          }
+          .testimonial-title {
+            font-family: $--font-museo;
+            font-size: 32px;
+            line-height: 38px;
+            font-weight: 700;
+            margin: $--spacing-xl 0 $--spacing-l 0;
+            span.icon {
+              i{
+                font-size: 32px;
+              }
+            }
+          }
+          .testimonial-description {
+            font-size: 16px;
+            line-height: 24px;
+            font-weight: 400;
+            margin: 0;
+            span.icon {
+              i{
+                font-size: 16px;
+              }
+            }
+          }
+          div {
+            &:first-child {
+              padding: 0 35px 0 36px;
+              background-color: $--blue-50;
+              border-radius: 4px;
+              @include for-xlarge {
+                width: calc((100% / 12) * 4 - 85px);
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                img {
+                  width: 65px;
+                  height: 45px;
+                }
+              }
+              @include for-large {
+                width: calc((100% / 12) * 4 - 85px);
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                img {
+                  width: 65px;
+                  height: 45px;
+                }
+              }
+              @include for-laptop {
+                width: calc((100% / 12) * 6 - 80px);
+                padding: 45px $--spacing-xl $--spacing-jumbo $--spacing-xl;
+              }
+              @include for-tablet {
+                width: calc((100% - 100px));
+                padding: 45px $--spacing-xl 90px $--spacing-xl;
+              }
+              @include for-mobile {
+                width: calc((100% - 70px));
+                padding: 45px $--spacing-xl 58px $--spacing-xl;
+              }
+              h3 {
+                margin: 45px 0 24px 0;
+                @include for-mobile {
+                  margin-top: $--spacing-xl;
+                }
+              }
+            }
+            &:last-child {
+              width: calc((100% / 12) * 8);
+              flex: 1;
+              @include for-xlarge {
+                width: calc((100% / 12) * 8);
+              }
+              @include for-large {
+                width: calc((100% / 12) * 8);
+              }
+              @include for-laptop {
+                width: calc((100% / 12) * 6);
+              }
+              @include for-tablet {
+                width: calc((100% - 26px));
+                margin: 0;
+              }
+              @include for-mobile {
+                width: 100%;
+                margin: 0;
+              }
+              picture {
+                img {
+                  width: 100%;
+                  height: 100%;
+                  border-radius: 5px;
+                  object-fit: cover;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    > div {
+      &:last-child {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
+        @include for-xlarge {
+          margin-top: $--spacing-huge;
+        }
+        @include for-large {
+          margin-top: $--spacing-huge;
+        }
+        @include for-laptop {
+          margin-top: $--spacing-huge;
+        }
+        @include for-tablet {
+          margin-top: 58px;
+        }
+        @include for-mobile {
+          margin-top: $--spacing-xl;
+        }
+      }
+    }
+  }
+}
+.testimonial-small-image {
+  .testimonial-with-image-wrapper {
+    .testimonial-with-image {
+      ul {
+        li {
+          display: flex;
+          @include for-laptop {
+            flex-direction: row-reverse;
+          }
+          @include for-tablet {
+            flex-direction: column-reverse;
+            gap: 36px !important;
+          }
+          @include for-mobile {
+            flex-direction: column-reverse;
+          }
+          div {
+            &:first-child {
+              padding-left: 36px !important;
+              background-color: $--blue-50;
+              @include for-xlarge {
+                width: calc((100% / 12) * 8) !important;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                img {
+                  width: 65px;
+                  height: 45px;
+                }
+              }
+              @include for-large {
+                width: calc((100% / 12) * 8) !important;
+              }
+              @include for-laptop {
+                width: calc((100% / 12) * 6 - 75px) !important;
+                padding: 45px $--spacing-xl $--spacing-jumbo $--spacing-xl !important;
+              }
+              @include for-tablet {
+                width: calc((100% - 98px)) !important;
+                padding: 45px $--spacing-xl $--spacing-jumbo $--spacing-xl !important;
+              }
+              @include for-mobile {
+                width: calc((100% - 70px)) !important;
+                padding: 45px $--spacing-xl 58px $--spacing-xl !important;
+              }
+              h3 {
+                margin: 45px 0 24px 0;
+                @include for-mobile {
+                  margin-top: $--spacing-xl;
+                }
+              }
+            }
+            &:last-child {
+              width: calc((100% / 12) * 8) !important;
+              @include for-xlarge {
+                width: calc((100% / 12) * 4 + 20px) !important;
+              }
+              @include for-large {
+                width: calc((100% / 12) * 4 + 20px) !important;
+              }
+              @include for-laptop {
+                width: calc((100% / 12) * 6) !important;
+              }
+              @include for-tablet {
+                width: calc((100% - 26px)) !important;
+                margin: 0;
+              }
+              @include for-mobile {
+                width: calc((100%)) !important;
+                margin: 0;
+              }
+              picture {
+                img {
+                  width: 100%;
+                  height: 100%;
+                  object-fit: cover;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    > div {
+      &:last-child {
+        margin-bottom: 0 !important;
+        margin-top: 52px !important;
+        @include for-mobile {
+          margin-top: $--spacing-xl !important;
+        }
+      }
+    }
+  }
+}

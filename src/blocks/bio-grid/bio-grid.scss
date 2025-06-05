@@ -1,0 +1,193 @@
+@import '../../styles/include/_mq.scss';
+@import '../../styles/include/_tokens.scss';
+
+.bio-grid {
+  &-wrapper {
+    *,
+    *::after,
+    *::before {
+      box-sizing: border-box;
+    }
+    margin: 0 auto;
+    max-width: 1275px;
+    padding: 0;
+    width: 100%;
+    padding: $--spacing-max 0;
+    @include for-large {
+      width: calc(100% - 104px);
+    }
+    @include for-laptop {
+      width: calc(100% - 72px);
+    }
+    @include for-tablet {
+      width: calc(100% - 72px);
+      padding: $--spacing-jumbo 0;
+    }
+    @include for-mobile {
+      width: calc(100% - 32px);
+      padding: $--spacing-huge 0;
+    }
+  }
+  > div {
+    align-items: flex-start;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
+    margin-bottom: 36px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+    @include for-xlarge {
+      width: calc((100% / 12) * 10 - 6px);
+      gap: 30px;
+    }
+    @include for-large {
+      gap: 30px;
+    }
+    @include for-laptop {
+      gap: 32px;
+    }
+    @include for-tablet {
+      gap: 52px;
+      margin-bottom: 52px;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+    @include for-mobile {
+      gap: 36px;
+    }
+    > div {
+      width: calc((100% / 3) - 20px);
+    }
+
+    @include for-large {
+      > div {
+        width: calc((100% / 3) - 20px);
+      }
+    }
+    @include for-laptop {
+      > div {
+        width: calc(((100% / 12) * 4) - 22px);
+      }
+    }
+    @include for-tablet {
+      align-items: center;
+      flex-direction: column;
+      > div {
+        height: auto !important;
+        max-width: 624px;
+        width: 100%;
+      }
+    }
+    @include for-tablet-smallest {
+      align-items: center;
+      flex-direction: column;
+      > div {
+        height: auto !important;
+        width: calc(((100% / 6) * 4) - 12px);
+      }
+    }
+    @include for-mobile {
+      align-items: center;
+      flex-direction: column;
+      > div {
+        height: auto !important;
+        max-width: none;
+        width: 100%;
+      }
+    }
+    &.bio-grid-title {
+      margin: 0 auto;
+      > div {
+        margin: 0 0 52px 0;
+        width: 100%;
+        h2 {
+          margin: 0;
+          text-align: center;
+        }
+        @include for-tablet {
+          margin: 0 0 48px 0;
+        }
+        @include for-tablet-smallest {
+          margin: 0 0 52px 0;
+        }
+        @include for-mobile {
+          margin: 0 0 36px 0;
+        }
+      }
+    }
+  }
+  article {
+    background-color: $--blue-50;
+    border-radius: 0 0 4px 4px;
+    border: 2px solid $--gray-225;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+
+    .bio-grid-thumb p {
+      margin: 0;
+    }
+
+    h3 {
+      line-height: 1.25;
+      margin: 24px 0 12px 0;
+      padding: 0 26px 0 31px;
+      text-align: center;
+      @include for-tablet {
+        padding: 0 31px;
+      }
+      @include for-mobile {
+        padding: 0 23px;
+      }
+    }
+    p {
+      margin: 0 0 23px 0;
+      padding: 0 23px;
+      text-align: center;
+      font-weight: 700;
+      @include for-tablet {
+        padding: 0 31px;
+      }
+      @include for-mobile {
+        padding: 0 23px;
+      }
+    }
+  }
+  &-thumb {
+    border-bottom: 2px solid $--gray-225;
+    display: block;
+    overflow: hidden;
+    padding-bottom: 98.795% !important;
+    position: relative;
+    @include for-large {
+      padding-bottom: 98.795% !important;
+    }
+    @include for-laptop {
+      padding-bottom: 110.811% !important;
+    }
+    @include for-tablet {
+      padding-bottom: 110.737% !important;
+    }
+    @mixin for-tablet-smallest {
+      padding-bottom: 110.687% !important;
+    }
+    @include for-mobile {
+      padding-bottom: 110.803% !important;
+    }
+    img {
+      // height: 100%;
+      height: auto;
+      left: 50%;
+      object-fit: cover;
+      position: absolute;
+      // top: 50%;
+      // transform: translate(-50%, -50%);
+      top: 0;
+      transform: translate(-50%, 0);
+      width: 100%;
+    }
+  }
+}

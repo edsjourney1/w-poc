@@ -1,0 +1,153 @@
+@import '../../styles/include/_mq.scss';
+@import '../../styles/include/_tokens.scss';
+
+.section.asset-download-container {
+  .asset-download-wrapper {
+    @include for-large {
+      width: calc(100% - 104px);
+    }
+    @include for-laptop {
+      width: calc(100% - 72px);
+    }
+    @include for-tablet {
+      width: calc(100% - 72px);
+    }
+    @include for-mobile {
+      width: calc(100% - 32px);
+    }
+    .asset-download {
+      padding: $--spacing-max 0;
+      @include for-tablet {
+        padding: $--spacing-jumbo 0;
+      }
+      @include for-mobile {
+        padding: $--spacing-huge 0;
+      }
+      .text-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-bottom: $--spacing-xxl;
+        @include for-laptop {
+          padding-bottom: 58px;
+        }
+        @include for-tablet {
+          padding-bottom: $--spacing-xxl;
+        }
+        @include for-tablet-smallest {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 24px;
+          padding-bottom: $--spacing-xl;
+        }
+        @include for-mobile {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 24px;
+          padding-bottom: $--spacing-xl;
+        }
+        .title {
+          h2 {
+            color: $--gray-700;
+            font-family: $--font-museo;
+            font-size: 32px;
+            font-weight: 600;
+            margin: 0;
+            @include for-mobile {
+              font-size: 28px;
+            }
+          }
+        }
+        .download-link {
+          a {
+            color: $--blue-675;
+            font-family: $--font-roboto;
+            font-size: 16px;
+            font-weight: 500;
+            display: inline-flex;
+            &:focus {
+              outline: 3px solid $--orange-450;
+              outline-style: dashed;
+              outline-offset: 2px;
+            }
+          }
+        }
+      }
+      .assets-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 36px 30px;
+        @include for-laptop {
+          gap: 74px 30px;
+        }
+        @include for-tablet {
+          gap: 36px;
+          flex-direction: column;
+        }
+        @include for-mobile {
+          gap: 36px;
+        }
+        > div {
+          width: calc(((100% / 12) * 4) - 20px);
+          @include for-tablet {
+            width: 100%;
+          }
+          @include for-mobile {
+            width: 100%;
+          }
+          a {
+            &.asset-download-img {
+              display: block;
+              height: 0;
+              padding-bottom: 57.034%;
+              margin-bottom: 24px;
+              position: relative;
+              border-radius: 4px;
+              overflow: hidden;
+              @include for-large {
+                padding-bottom: 57.034%;
+              }
+              @include for-laptop {
+                padding-bottom: 57.094%;
+              }
+              @include for-tablet {
+                padding-bottom: 57.038%;
+              }
+              @include for-mobile {
+                padding-bottom: 57.108%;
+              }
+              img {
+                // height: 100%;
+                height: auto;
+                left: 50%;
+                object-fit: cover;
+                position: absolute;
+                // top: 50%;
+                // transform: translate(-50%, -50%);
+                top: 0;
+                transform: translate(-50%, 0);
+                width: 100%;
+              }
+            }
+            color: $--blue-675;
+            font-family: $--font-roboto;
+            font-size: 16px;
+            font-weight: 500;
+            i {
+              margin-left: 12px;
+            }
+            &:focus {
+              outline: 3px solid $--orange-450;
+              outline-style: dashed;
+              outline-offset: 2px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.icon-phone,
+.icon-solid--phone {
+  margin: 0 2px 0 2px;
+}

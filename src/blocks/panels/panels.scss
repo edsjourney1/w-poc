@@ -1,0 +1,260 @@
+@import '../../styles/include/_mq.scss';
+@import '../../styles/include/_tokens.scss';
+
+.panels {
+  $this: &;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -15px;
+  row-gap: 36px;
+  width: calc(100% + 30px);
+  * {
+    box-sizing: border-box;
+  }
+  &-wrapper {
+    padding: 16px 0;
+    width: 100%;
+    @include for-large {
+      width: calc(100% - 104px);
+    }
+    @include for-laptop {
+      width: calc(100% - 72px);
+    }
+    @include for-tablet {
+      width: calc(100% - 72px);
+    }
+    @include for-mobile {
+      width: calc(100% - 32px);
+    }
+  }
+  > div {
+    box-sizing: border-box;
+    padding: 0 15px;
+    width: 100%;
+  }
+  &-item {
+    border: 2px solid $--blue-550;
+    border-radius: 4px;
+    p {
+      margin: 0 0 15px 0;
+      &:last-child {
+        margin: 0;
+      }
+      .icon {
+        &.icon-light--phone {
+          margin: 0 2px 0 2px;
+        }
+        height: auto;
+        width: auto;
+        margin: 0 2px 0 5px;
+        i {
+          font-size: 16px;
+        }
+      }
+      .icon-phone,
+      .icon-solid--phone {
+        margin: 0 2px 0 2px;
+      }
+    }
+    .icon {
+      height: auto;
+      line-height: 1;
+      width: auto;
+      > i {
+        font-size: inherit;
+        color: inherit;
+      }
+    }
+    .button-container {
+      .icon {
+        margin-left: 5px;
+      }
+    }
+    &-has-label {
+      position: relative;
+      #{$this}-label-section {
+        display: block;
+      }
+      #{$this}-top-section {
+        background-color: $--blue-550;
+        color: $--white;
+        h3 {
+          color: $--white;
+          &::after {
+            border-bottom: 5px solid $--blue-50;
+          }
+        }
+      }
+      #{$this}-bottom-section {
+        background-color: $--blue-50;
+      }
+      #{$this}-toggle-section {
+        background-color: $--blue-50;
+      }
+    }
+    &-closed {
+      @include for-mobile-panel {
+        #{$this}-bottom-section {
+          display: none;
+        }
+      }
+      #{$this}-toggle-section {
+        &-auto {
+          border-top: 0;
+        }
+        &-open {
+          display: block;
+        }
+        &-close {
+          display: none;
+        }
+      }
+    }
+  }
+  &-top-section {
+    background-color: $--blue-50;
+    border-bottom: 2px solid $--blue-550;
+    border-radius: 2px 2px 0 0;
+    padding: 24px;
+    h3 {
+      font-family: $--font-museo;
+      font-size: 32px;
+      font-weight: 700;
+      line-height: 1;
+      margin: 0 0 16px 0;
+      padding: 0 0 12px 0;
+      position: relative;
+      .icon {
+        &.icon-light--phone {
+          margin: 0 2px 0 2px;
+        }
+        height: auto;
+        width: auto;
+        margin: 0 2px 0 5px;
+        i {
+          font-size: 16px;
+        }
+      }
+      .icon-phone,
+      .icon-solid--phone {
+        margin: 0 2px 0 2px;
+      }
+      &::after {
+        border-bottom: 5px solid $--blue-550;
+        bottom: 0;
+        content: '';
+        left: 0;
+        position: absolute;
+        width: calc(100% - 40px);
+      }
+    }
+    .button-container a {
+      background-color: $--white;
+      border-radius: 2px;
+      border: 2px solid $--blue-550;
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 36px;
+      text-align: center;
+      text-decoration: none;
+      &:hover {
+        background-color: $--gray-100;
+      }
+    }
+    @include for-mobile-panel {
+      height: auto !important;
+    }
+  }
+  &-bottom-section {
+    border-radius: 0 0 2px 2px;
+    padding: 24px;
+    @include for-mobile-panel {
+      height: auto !important;
+    }
+  }
+  &-label-section {
+    background-color: $--blue-100;
+    border-radius: 20px;
+    border: 2px solid $--blue-550;
+    color: $--blue-550;
+    display: none;
+    font-size: 12px;
+    left: 26px;
+    line-height: 20px;
+    max-width: calc(100% - 52px);
+    padding: 0 10px;
+    position: absolute;
+    top: -11px;
+    p {
+      margin: 0;
+      .icon {
+        margin: 0 4px 0 0;
+        i {
+          font-size: inherit;
+        }
+      }
+    }
+  }
+  &-toggle-section {
+    display: none;
+    &-auto {
+      border-top: 2px solid $--blue-550;
+      @include for-mobile-panel {
+        display: block;
+      }
+    }
+    &-open,
+    &-close {
+      background-color: transparent;
+      border: 0;
+      font-weight: 700;
+      width: 100%;
+      padding: 14px;
+    }
+    &-open {
+      display: none;
+    }
+    &-close {
+      display: block;
+    }
+  }
+  &-4-col {
+    > div {
+      width: 25%;
+      @include for-laptop {
+        width: 50%;
+      }
+      @include for-tablet {
+        width: 50%;
+      }
+      @include for-tablet-smallest {
+        width: 50%;
+      }
+      @include for-mobile-panel {
+        width: 100%;
+      }
+    }
+  }
+  &-3-col {
+    > div {
+      width: 33.3333%;
+      @include for-tablet {
+        width: 50%;
+      }
+      @include for-tablet-smallest {
+        width: 50%;
+      }
+      @include for-mobile-panel {
+        width: 100%;
+      }
+    }
+  }
+  &-2-col {
+    > div {
+      width: 50%;
+      @include for-mobile-panel {
+        width: 100%;
+      }
+    }
+  }
+}

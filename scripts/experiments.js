@@ -1,0 +1,1 @@
+let EXPERIMENTS={AUDIENCES:{types:{mobile:()=>window.innerWidth<600,desktop:()=>600<=window.innerWidth},params:{audiencesMetaTagPrefix:"audience",audiencesQueryParameter:"audience"}},CONTENTS:{params:{campaignsMetaTagPrefix:"content",campaignsQueryParameter:"content"}},VARIANTS:{params:{experimentsMetaTag:"variant",experimentsQueryParameter:"variant"}}};export{EXPERIMENTS};

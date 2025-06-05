@@ -1,0 +1,15 @@
+function decodeString(e){try{return decodeURI(e)}catch(e){return null}}let enableAutocomplete=t=>{if(window.autoComplete){let l=new window.autoComplete({flag:!0,name:"search_term",selector:"#search_term",data:{src:async e=>{e=decodeString(e);if(null===e)return[];var t=l.input.nextElementSibling,n=document.createElement("div"),n=(l.flag&&(l.flag=!1,n.classList.add("loader-main"),t.prepend(n)),t.hidden=!1,{term:e,limit:5,audience:"ALL_AUDIENCE"}),t={method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({query:`query Suggest($term: String!, $language: LanguageEnum = EN, $limit: Int = 5, $audience: AudienceEnum = ALL_AUDIENCE) {
+              suggest(term: $term, language: $language, limit: $limit, audience: $audience) {
+                items {
+                  WELLMARK_COM {
+                    highlights
+                  }
+                  WELLMARK_BLUE {
+                    highlights
+                  }
+                }
+              }
+            }`,variables:n})};try{var a=await fetch("https://apigw-sit.wellmark.com/wellmark-com-open-search/v1/search",t);if(!a.ok)throw new Error("Header Search Response status: "+a.status);var i=(await a.json()).data.suggest.items;let n=[];for(let t in i)(i[t].highlights||[]).forEach(e=>{n.push({match:e.replace("<em>","").replace("</em>",""),cat:t})});return n}catch(e){return e}},keys:["match"]},query:e=>(e.trim().length<3&&(document.querySelector(".main-autocomplete-page").hidden=!0),encodeURI(e.trim())),resultsList:{position:"afterend",tag:"ul",class:"main-autocomplete-page",noResults:!0,maxResults:15,tabSelect:!0,element:(e,t)=>{var n=document.createElement("p");t.results.length<=0&&(n.innerHTML=`Found <strong>${t.matches.length}</strong> matching results for <strong>"${t.query}"</strong>`),e.prepend(n)}},submit:!0,tabSelect:!0,resultItem:{highlight:!0,element:(e,t)=>{e.style="display: flex; justify-content: space-between;";var n,a=t.value.cat;e.previousElementSibling?.getAttribute("data-cat")!==a&&((n=document.createElement("p")).textContent=a,n.className="category-heading",n.setAttribute("data-cat",a),e.before(n)),e.setAttribute("data-cat",a),e.innerHTML=`
+              <span style="text-overflow: ellipsis; white-space: nowrap; overflow: hidden;">
+                ${t.match}
+              </span>`}},threshold:3,debounce:250,events:{input:{focus:()=>{var e;3<=l.input.value.length&&((e=l.input?.nextElementSibling)&&(e.hidden=!1),l.start())},blur:()=>{var e=l.input?.nextElementSibling;e&&(e.hidden=!0)}}}});l.input.addEventListener("results",e=>{e=e.target.nextElementSibling.querySelector(".loader-main");e&&(e.display="none")}),l.input.addEventListener("selection",e=>{e=e.detail,l.input.blur(),e=e.selection.value[e.selection.key];l.input.value=e,t(1,l.input.value)})}};export{enableAutocomplete};

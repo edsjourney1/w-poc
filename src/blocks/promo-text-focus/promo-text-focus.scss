@@ -1,0 +1,227 @@
+@import '../../styles/include/_mq.scss';
+@import '../../styles/include/_tokens.scss';
+
+.promo-text-focus-container {
+  @include for-mobile {
+    background: $--blue-550;
+  }
+  @include for-tablet {
+    background: $--blue-550;
+  }
+  .promo-text-focus-wrapper {
+    @include for-mobile {
+      background-image: none !important;
+    }
+    @include for-tablet {
+      background-image: none !important;
+    }
+    @include for-laptop {
+      padding: 0 $--spacing-xl;
+      background-position: 9%;
+    }
+    @include for-large {
+      padding: 0 $--spacing-xxl;
+      min-height: 575px;
+      background-position: 22%;
+    }
+    @include for-xlarge {
+      min-height: 575px;
+      background-position: 22%;
+      max-width: unset;
+    }
+    .promo-text-focus {
+      width: 100%;
+      display: flex;
+      justify-content: end;
+      @include for-xlarge {
+        max-width: 1275px;
+        margin: 0 auto;
+      }
+      &.block {
+        .promo-focus-block {
+          background: $--blue-550;
+          border-radius: 0 0 5px 5px;
+          @include for-laptop {
+            width: calc((100% / 2) - 15px);
+            margin: 0 0 12px 0;
+          }
+          @include for-large {
+            width: calc((100% - 30px) / 12 * 5);
+            margin: 0 0 141px 0;
+          }
+          @include for-xlarge {
+            width: calc((100% - 30px) / 12 * 5);
+            margin: 0 0 141px 0;
+          }
+          > div {
+            padding: $--spacing-huge $--spacing-m;
+            @include for-tablet {
+              padding: $--spacing-jumbo $--spacing-xl 48px $--spacing-xl;
+            }
+            @include for-laptop {
+              padding: $--spacing-huge $--spacing-xxl;
+            }
+            @include for-large {
+              padding: $--spacing-huge $--spacing-xxl;
+            }
+            @include for-xlarge {
+              padding: $--spacing-huge $--spacing-xxl;
+            }
+            > div {
+              h2:first-child {
+                margin: 0 0 $--spacing-l 0;
+                .icon-promoimage {
+                  margin-bottom: $--spacing-l;
+                  width: 64px;
+                  height: 64px;
+                }
+                span {
+                  width: 64px;
+                  height: 64px;
+                  i {
+                    font-size: 64px;
+                    color: $--white;
+                  }
+                }
+              }
+              h2 {
+                color: $--white;
+                width: 100%;
+                margin: 0;
+                .icon {
+                  &.icon-phone,
+                  &.icon-light--phone,
+                  &.icon-regular--phone,
+                  &.icon-solid--phone {
+                    margin: 0 2px 0 2px;
+                  }
+                  width: auto;
+                  height: auto;
+                  margin: 0 2px 0 5px;
+                  i {
+                    font-size: 32px;
+                    color: $--white;
+                  }
+                }
+                a {
+                  .icon {
+                    &.icon-phone,
+                    &.icon-light--phone,
+                    &.icon-regular--phone,
+                    &.icon-solid--phone {
+                      margin: 0 2px 0 2px;
+                    }
+                    height: auto;
+                    width: auto;
+                    margin: 0 2px 0 5px;
+                    i {
+                      font-size: 32px;
+                      color: $--white;
+                    }
+                  }
+                }
+                @include for-mobile {
+                  font-size: 32px;
+                }
+              }
+              p {
+                color: $--white;
+                width: 100%;
+                margin: 0;
+                margin: $--spacing-m 0 $--spacing-l 0;
+                @include for-mobile {
+                  margin: $--spacing-l 0 $--spacing-xl 0;
+                }
+                &:not(.button-container) {
+                  span.icon {
+                    &.icon-phone,
+                    &.icon-light--phone,
+                    &.icon-regular--phone,
+                    &.icon-solid--phone {
+                      margin: 0 2px 0 2px;
+                    }
+                    height: auto;
+                    width: auto;
+                    margin: 0 2px 0 5px;
+                    i {
+                      font-size: 16px;
+                      color: #fff;
+                    }
+                  }
+                }
+                &:not(:has(strong, em)) {
+                  a {
+                    span.icon {
+                      &.icon-phone,
+                      &.icon-light--phone,
+                      &.icon-regular--phone,
+                      &.icon-solid--phone {
+                        margin: 0 2px 0 2px;
+                      }
+                      height: auto;
+                      width: auto;
+                      margin: 0 2px 0 5px;
+                      i {
+                        font-size: 16px;
+                        color: $--white;
+                      }
+                    }
+                  }
+                }
+                &.button-container {
+                  margin-top: 0;
+                  margin-bottom: 0;
+                  @include for-nonmobile {
+                    width: max-content;
+                  }
+                }
+                &.button-container + p:not(.button-container) {
+                  margin-top: 24px;
+                  &:last-child {
+                    margin-bottom: 0;
+                  }
+                }
+                &.button-container + ul {
+                  padding-top: 24px;
+                }
+              }
+              ul {
+                margin: 0;
+                padding-bottom: 24px;
+                &:last-child {
+                  padding-bottom: 0;
+                }
+                li {
+                  padding-bottom: 12px;
+                  .icon {
+                    &.icon-phone,
+                    &.icon-light--phone,
+                    &.icon-regular--phone,
+                    &.icon-solid--phone {
+                      margin: 0 2px 0 2px;
+                    }
+                    height: auto;
+                    width: auto;
+                    margin: 0 2px 0 5px;
+                    i {
+                      font-size: 16px;
+                      color: $--white;
+                    }
+                  }
+                  &:last-child {
+                    padding-bottom: 0;
+                  }
+                  ul,
+                  ol {
+                    padding-top: 12px;
+                    padding-bottom: 0;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

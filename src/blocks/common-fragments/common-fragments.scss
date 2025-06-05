@@ -1,0 +1,325 @@
+@import '../../styles/include/_mq.scss';
+@import '../../styles/include/_tokens.scss';
+
+@mixin focus-outline {
+  &:focus {
+    outline: 3px solid $--orange-450;
+    outline-style: dashed;
+    outline-offset: 2px;
+  }
+}
+
+.blog-social {
+  &-links {
+    position: relative;
+    em {
+      display: none;
+    }
+    h3 {
+      color: $--gray-700;
+      font-size: 24px;
+      width: 100%;
+      margin: 0 0 16px 0;
+    }
+    h4 {
+      color: $--gray-700;
+      font-size: 20px;
+      width: 100%;
+      margin: 0 0 16px 0;
+    }
+    > div {
+      div:nth-child(2) {
+        a:not(.button),
+        button {
+          align-items: center;
+          background: transparent;
+          border-radius: 8px;
+          border: 2px solid #4d4d4f;
+          color: $--gray-700;
+          cursor: pointer;
+          display: flex;
+          font-size: 21px;
+          height: 44px;
+          justify-content: center;
+          padding: 0;
+          width: 44px;
+          margin-right: 12px;
+          &:last-child {
+            margin-right: 0;
+          }
+          &:hover {
+            color: $--blue-550;
+          }
+          .icon {
+            height: auto;
+            width: auto;
+            vertical-align: top;
+            > i {
+              font-size: inherit;
+              color: inherit;
+              line-height: 1;
+            }
+          }
+        }
+      }
+    }
+    > div {
+      display: flex;
+      align-items: flex-start;
+      row-gap: 36px;
+      margin: 52px 0 0 0;
+      &:nth-child(2) {
+        margin: 0;
+        p {
+          display: none;
+        }
+      }
+      @include for-tablet {
+        flex-direction: column;
+        row-gap: unset;
+        > div {
+          &:nth-child(2) {
+            margin-top: 36px;
+          }
+        }
+      }
+      @include for-mobile {
+        flex-direction: column;
+        row-gap: unset;
+        > div {
+          &:nth-child(1) {
+            margin-right: 0 !important;
+          }
+          &:nth-child(2) {
+            margin-top: 36px;
+          }
+        }
+      }
+      &.alert-wrapper-visible {
+        padding-bottom: 132px;
+        div:nth-child(2).alert-wrapper {
+          display: block;
+        }
+      }
+      > div {
+        align-items: flex-start;
+        display: flex;
+        flex-wrap: wrap;
+        @include for-tablet {
+          margin-top: 6px;
+        }
+        &:nth-child(1) {
+          column-gap: 24px;
+          margin-right: 72px;
+          // width: 140px;
+          @include for-tablet {
+            margin-bottom: 26px;
+          }
+          .QSI__EmbeddedFeedbackContainer {
+            margin: 0 !important;
+          }
+          fieldset {
+            display: block !important;
+            text-align: left !important;
+          }
+          label {
+            font-weight: 700 !important;
+            color: $--gray-700 !important;
+            font-size: 20px !important;
+            width: 100% !important;
+            margin: 0 0 16px 0 !important;
+            display: block !important;
+            + div {
+              width: 100%;
+              display: flex !important;
+              margin: 0 !important;
+              button {
+                width: 44px;
+                height: 44px;
+              }
+              svg {
+                width: 75%;
+                height: 75%;
+              }
+            }
+          }
+          textarea {
+            border-radius: 0 !important;
+            border: 2px solid $--gray-500 !important;
+            height: 72px;
+            margin: 0 0 24px 0 !important;
+            resize: none;
+            width: 100% !important;
+            &:focus {
+              outline: 3px solid $--orange-450 !important;
+              outline-style: dashed !important;
+              outline-offset: 2px !important;
+            }
+            + button {
+              align-items: center;
+              background-color: rgba(0, 0, 0, 0) !important;
+              border-radius: 2px;
+              border: 2px solid $--blue-675 !important;
+              color: $--blue-675 !important;
+              cursor: pointer;
+              display: inline-flex;
+              font-size: 18px !important;
+              font-weight: 500 !important;
+              height: 52px;
+              justify-content: center;
+              line-height: 28px !important;
+              padding: 5px 23.1px !important;
+              text-decoration: none;
+              &:hover {
+                background-color: $--blue-50 !important;
+              }
+              &:focus {
+                outline: 3px solid $--orange-450 !important;
+                outline-style: dashed !important;
+                outline-offset: 2px !important;
+              }
+            }
+          }
+          button {
+            align-items: center;
+            background: transparent;
+            border-radius: 8px;
+            border: 0;
+            color: $--gray-700;
+            cursor: pointer;
+            display: flex;
+            font-size: 32px;
+            justify-content: center;
+            padding: 0;
+            @include focus-outline;
+            &[disabled] {
+              cursor: default;
+              opacity: 0.5;
+            }
+            &:hover {
+              color: $--blue-675;
+            }
+            .icon {
+              height: auto;
+              width: auto;
+              > i {
+                color: inherit;
+                font-size: inherit;
+                line-height: 1;
+              }
+            }
+          }
+        }
+        &:nth-child(2) {
+          @include for-tablet {
+            margin-bottom: 5px;
+          }
+        }
+        &:nth-child(2).alert-wrapper {
+          bottom: 0;
+          display: none;
+          left: 0;
+          position: absolute;
+          width: 100%;
+          > div:nth-child(1) {
+            width: auto;
+            margin: 0;
+            > div {
+              align-items: center;
+            }
+          }
+        }
+        &:nth-child(3) {
+          column-gap: 12px;
+          width: 290px;
+          a,
+          button {
+            align-items: center;
+            background: transparent;
+            border-radius: 8px;
+            border: 2px solid #4d4d4f;
+            color: $--gray-700;
+            cursor: pointer;
+            display: flex;
+            font-size: 21px;
+            height: 44px;
+            justify-content: center;
+            padding: 0;
+            width: 44px;
+            @include focus-outline;
+            .icon {
+              line-height: 1;
+              > i {
+                color: $--gray-700;
+              }
+            }
+            &:hover {
+              background-color: $--blue-100;
+              color: $--gray-700;
+            }
+          }
+        }
+      }
+      .feedback-fields {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        display: block;
+        > div {
+          display: flex;
+          align-items: flex-end;
+          gap: 20px;
+          textarea {
+            width: 260px;
+            height: 100px;
+          }
+          p.button-container {
+            margin: 0;
+            a.button {
+              padding: 10px 20px;
+              font-size: 18px;
+            }
+          }
+        }
+      }
+    }
+    @include for-large {
+      width: calc(100% - 104px);
+    }
+    @include for-laptop {
+      width: calc(100% - 72px);
+    }
+    @include for-tablet {
+      width: calc(100% - 72px);
+    }
+    @include for-mobile {
+      width: calc(100% - 48px);
+    }
+  }
+}
+
+.language-helper {
+  display: none;
+  &-wrapper {
+    margin: 0 auto;
+    max-width: 1275px;
+    padding: 0 0 36px 0;
+    width: 100%;
+    p {
+      margin: 0;
+    }
+    @include for-large {
+      width: calc(100% - 104px);
+    }
+    @include for-laptop {
+      width: calc(100% - 72px);
+    }
+    @include for-tablet {
+      width: calc(100% - 72px);
+    }
+    @include for-mobile {
+      width: calc(100% - 32px);
+    }
+  }
+}

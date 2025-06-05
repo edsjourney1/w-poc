@@ -1,0 +1,197 @@
+@import '../../styles/include/_mq.scss';
+@import '../../styles/include/_tokens.scss';
+
+.multiple-textblocks-container {
+  .multiple-textblocks-wrapper {
+    @include for-mobile {
+      padding: 72px 16px 72px 16px;
+    }
+    @include for-tablet {
+      padding: 96px 36px 96px 36px;
+    }
+    @include for-large {
+      padding: 120px 52px 120px 52px;
+    }
+    @include for-xlarge {
+      padding: 120px 0 120px 0;
+    }
+    @include for-laptop {
+      padding: 120px 36px 120px 36px;
+    }
+    .title {
+      opacity: 1;
+      font-family: $--font-museo;
+      font-size: 32px;
+      font-weight: 600;
+      letter-spacing: 0px;
+      line-height: 38px;
+      text-align: left;
+      margin: 0;
+      color: $--gray-700;
+      span.icon {
+        i {
+          font-size: 32px;
+        }
+      }
+      &:has(a) {
+        color: $--blue-550;
+      }
+      @include for-mobile {
+        padding-bottom: 52px;
+        font-size: 28px;
+      }
+      @include for-tablet {
+        padding-bottom: 52px;
+        font-size: 28px;
+      }
+      @include for-large {
+        padding-bottom: 72px;
+      }
+      @include for-xlarge {
+        padding-bottom: 72px;
+      }
+      @include for-laptop {
+        padding-bottom: 72px;
+      }
+    }
+    .multiple-textblocks {
+      > ul {
+        list-style: none;
+        display: flex;
+        flex-wrap: wrap;
+        padding: 0;
+        margin: 0;
+        column-gap: 30px;
+        row-gap: 52px;
+        @include for-mobile {
+          flex-direction: column;
+        }
+        > li {
+          width: calc((100% / 4) - 22.5px);
+          @include for-tablet {
+            width: calc((100% / 2) - 15px);
+          }
+          @include for-mobile {
+            width: 100%;
+          }
+          > .block-div {
+            h2,
+            h3,
+            h4,
+            h5,
+            h6 {
+              opacity: 1;
+              font-family: $--font-roboto;
+              font-size: 24px;
+              line-height: 28px;
+              font-weight: 700;
+              letter-spacing: 0px;
+              text-align: left;
+              padding-bottom: 12px;
+              margin: 0;
+              color: $--gray-700;
+              span.icon {
+                i {
+                  font-size: 20px;
+                }
+              }
+              &:has(a) {
+                color: $--blue-550;
+              }
+              .icon {
+                &.icon-light--phone,
+                &.icon-regular--phone,
+                &.icon-solid--phone,
+                &.icon-phone {
+                  margin: 0 2px 0 2px;
+                }
+                height: auto;
+                width: auto;
+                margin: 0 2px 0 5px;
+                i {
+                  font-size: 20px;
+                }
+              }
+            }
+            h2 {
+              font-size: 28px;
+            }
+            h4 {
+              font-size: 20px;
+            }
+            h5 {
+              font-size: 18px;
+            }
+            h6 {
+              font-size: 16px;
+            }
+            > p {
+              opacity: 1;
+              color: $--gray-700;
+              font-family: $--font-roboto;
+              font-size: 16px;
+              font-weight: 400;
+              letter-spacing: 0px;
+              text-align: left;
+              line-height: 24px;
+              margin: 0;
+              &:has(a) {
+                padding-top: 24px;
+                width: fit-content;
+              }
+              .icon {
+                &.icon-light--phone,
+                &.icon-regular--phone,
+                &.icon-solid--phone,
+                &.icon-phone {
+                  margin: 0 2px 0 2px;
+                }
+                height: auto;
+                width: auto;
+                margin: 0 2px 0 5px;
+                i {
+                  font-size: 16px;
+                }
+              }
+              a {
+                opacity: 1;
+                color: $--blue-675;
+                font-family: $--font-roboto;
+                font-size: 16px;
+                font-weight: 500;
+                letter-spacing: 0px;
+                text-align: left;
+                text-decoration: underline;
+                .icon {
+                  &.icon-light--phone,
+                  &.icon-regular--phone,
+                  &.icon-solid--phone,
+                  &.icon-phone {
+                    margin: 0 2px 0 2px;
+                  }
+                  height: auto;
+                  width: auto;
+                  margin: 0 2px 0 5px;
+                  i {
+                    font-size: 16px;
+                  }
+                }
+              }
+              // span {
+              //   padding-left: 6px;
+              //   height: 15px;
+              //   width: 15px;
+              //   vertical-align: text-top;
+              //   i {
+              //     font-size: 100%;
+              //     vertical-align: text-top;
+              //     color: $--blue-675;
+              //   }
+              // }
+            }
+          }
+        }
+      }
+    }
+  }
+}

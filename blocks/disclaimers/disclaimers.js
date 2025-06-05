@@ -1,0 +1,1 @@
+export default async function decorate(r){console.log(r.children);var[r]=Array.from(r.children);r?.classList.add("disclaimers-body")}

@@ -1,0 +1,41 @@
+{
+  "project": "Example",
+  "plugins": [
+    {
+      "id": "library",
+      "title": "Library",
+      "environments": ["edit"],
+      "url": "/tools/sidekick/library.html",
+      "includePaths": ["**.docx**"]
+    },
+    {
+      "id": "asset-library",
+      "title": "My Assets",
+      "environments": ["edit"],
+      "url": "https://experience.adobe.com/solutions/CQ-assets-selectors/static-assets/resources/franklin/asset-selector.html",
+      "isPalette": true,
+      "includePaths": ["**.docx**"],
+      "passConfig": true,
+      "paletteRect": "top: 50px; bottom: 10px; right: 10px; left: auto; width:400px; height: calc(100vh - 60px)"
+    },
+     {
+    "id": "branch",
+    "title": "DEV",
+    "environments": ["edit", "dev", "preview"],
+    "url": "https://dev1--wmlocal--sonalcognizant.aem.page/",
+    "includePaths": ["**.docx**"],
+    "passConfig": true,
+    "isPalette": true
+    },
+    
+    {
+      "id": "accessibility-mode",
+      "title": "Accessibility Mode",
+      "environments": [
+        "preview",
+        "dev"
+      ],
+      "event": "accessibility-mode"
+    }
+  ]
+}

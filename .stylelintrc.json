@@ -1,0 +1,35 @@
+{
+  "extends": "stylelint-config-standard-scss",
+  "rules": {
+    "no-descending-specificity": null,
+    "rule-empty-line-before": null,
+    "comment-empty-line-before": null,
+    "color-hex-length": null,
+    "at-rule-empty-line-before": null,
+    "selector-attribute-quotes": null,
+    "shorthand-property-no-redundant-values": null,
+    "length-zero-no-unit": null,
+    "declaration-block-no-duplicate-properties": null,
+    "color-function-notation": null,
+    "alpha-value-notation": null,
+    "value-keyword-case": null,
+    "number-max-precision": null,
+    "selector-class-pattern": null,
+    "media-feature-range-notation": null,
+    "declaration-block-no-redundant-longhand-properties": null,
+    "scss/load-partial-extension": "always",
+    "scss/load-no-partial-leading-underscore": null,
+    "no-invalid-position-at-import-rule": null,
+    "scss/double-slash-comment-empty-line-before": null,
+    "declaration-empty-line-before": null
+  },
+  "ignoreFiles": [
+    "blocks/**/*.*",
+    "tools/**/*.*",
+    "coverage/**/*.*",
+    "plugins/**/*.*",
+    "src/styles/include/**/*.*",
+    "src/styles/fonts.*",
+    "styles/**/*.*"
+  ]
+}

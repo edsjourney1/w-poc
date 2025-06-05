@@ -1,0 +1,47 @@
+@import '../../styles/include/_mq.scss';
+@import '../../styles/include/_tokens.scss';
+
+.appstore-links {
+  > div {
+    display: flex;
+    width: max-content;
+    column-gap: 30px;
+    a {
+      display: block;
+      width: 190px;
+    }
+    p {
+      margin: 0;
+    }
+    img {
+      vertical-align: top;
+    }
+    @include for-mobile {
+      column-gap: 0;
+      flex-direction: column;
+      row-gap: 15px;
+      width: 100%;
+      a {
+        width: 100%;
+      }
+    }
+  }
+  &-wrapper {
+    margin: 0 auto;
+    max-width: 1275px;
+    padding: 0;
+    width: 100%;
+    @include for-large {
+      width: calc(100% - 104px);
+    }
+    @include for-laptop {
+      width: calc(100% - 72px);
+    }
+    @include for-tablet {
+      width: calc(100% - 72px);
+    }
+    @include for-mobile {
+      width: calc(100% - 32px);
+    }
+  }
+}

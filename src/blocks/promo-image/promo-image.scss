@@ -1,0 +1,454 @@
+@import '../../styles/include/_mq.scss';
+@import '../../styles/include/_tokens.scss';
+.promo-image-container {
+  .promo-image-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    &::before {
+      content: '';
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      top: 0;
+      left: 0;
+      pointer-events: none;
+      background: linear-gradient(
+        180deg,
+        rgba(75, 76, 77, 1) 0%,
+        rgba(93, 93, 93, 0.65) 29%,
+        rgba(115, 115, 115, 0.2) 100%
+      );
+      z-index: 1;
+    }
+    @include for-mobile {
+      padding: 0 16px;
+    }
+    @include for-tablet {
+      padding: 0 36px;
+    }
+    @include for-xlarge {
+      padding: 0 52px;
+    }
+    @include for-large {
+      padding: 0 52px;
+    }
+    @include for-laptop {
+      padding: 0 36px;
+    }
+  }
+}
+.promo-image-heading {
+  text-align: center;
+  color: $--white;
+  text-align: center;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 38px;
+  margin: 0;
+  font-family: $--font-museo;
+  z-index: 1;
+  span.icon {
+    i {
+      font-size: 32px;
+    }
+  }
+  &:has(a) {
+    color: $--blue-550;
+  }
+  @include for-mobile {
+    padding-top: 72px;
+    font-size: 28px;
+    width: 100%;
+    line-height: 34px;
+  }
+  @include for-tablet {
+    padding-top: 96px;
+    font-size: 28px;
+    width: 100%;
+    line-height: 34px;
+  }
+  @include for-xlarge {
+    padding-top: 120px;
+    max-width: 623px;
+    margin: 0 auto;
+  }
+  @include for-large {
+    padding-top: 120px;
+    width: calc(50% - 15px);
+    margin: 0 auto;
+  }
+  @include for-laptop {
+    padding-top: 120px;
+    width: calc(66.66% - 12px);
+    margin: 0 auto;
+  }
+}
+
+.promo-image {
+  max-width: 1275px;
+  margin: 0;
+  > .promo-4-column {
+    list-style: none;
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    text-align: center;
+    flex-direction: row;
+    margin: 0;
+    @include for-mobile {
+      padding: 52px 0px 72px 0px;
+      flex-direction: column;
+      gap: 24px;
+    }
+    @include for-xlarge {
+      gap: 30px;
+      padding: 72px 0px 120px 0px;
+    }
+    @include for-large {
+      padding: 72px 0px 120px 0px;
+      gap: 30px;
+    }
+    @include for-laptop {
+      padding: 72px 0px 109px 0px;
+      gap: 30px;
+    }
+    @include for-tablet {
+      padding: 52px 0px 96px 0px;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+    > li {
+      background-color: var(--background-color);
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      border-radius: 4px;
+      z-index: 1;
+      &:first-child {
+        padding-bottom: 6px;
+      }
+      &:nth-child(2) {
+        padding-bottom: 6px;
+      }
+      @include for-xlarge {
+        width: calc((100% - 104px) / 4);
+        //   padding: 24px;
+      }
+      @include for-large {
+        width: calc((100% - 104px) / 4);
+        //   padding: 24px;
+      }
+      @include for-laptop {
+        width: calc((100% - 72px) / 3);
+        //   padding: 24px;
+      }
+      @include for-tablet {
+        flex-basis: calc((100% - 30px) / 2);
+      }
+      .cards-card-body {
+        // padding: 0 36px 37px 36px;
+        padding: 0 36px;
+        h3 {
+          font-weight: 700;
+          font-family: $--font-roboto;
+          line-height: 24px;
+          font-size: 24px;
+          text-align: left;
+          text-decoration: underline;
+          opacity: 1;
+          letter-spacing: 0px;
+          margin: 0;
+          padding-top: 36px;
+          color: $--gray-700;
+          span.icon {
+            i {
+              font-size: 32px;
+            }
+          }
+          &:has(a) {
+            color: $--blue-675;
+          }
+        }
+        p {
+          font-weight: 400;
+          font-family: $--font-roboto;
+          line-height: 24px;
+          font-size: 16px;
+          color: $--gray-700;
+          text-align: left;
+          margin: 0;
+          opacity: 1;
+          padding-top: 36px;
+          &:last-child {
+            padding-top: 16px;
+            padding-bottom: 36px;
+          }
+          > span {
+            width: 100%;
+            height: 100%;
+            border-bottom: 2px solid $--gray-100;
+            padding-bottom: 36px;
+            > img {
+              width: 80px;
+              height: 80px;
+            }
+            > i {
+              font-size: 80px;
+            }
+          }
+        }
+      }
+    }
+  }
+  > .promo-3-column {
+    list-style: none;
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    text-align: center;
+    flex-direction: row;
+    margin: 0;
+    @include for-mobile {
+      padding: 52px 0px 72px 0px;
+      flex-direction: column;
+      gap: 24px;
+    }
+    @include for-xlarge {
+      gap: 30px;
+      padding: 72px 0px 120px 0px;
+    }
+    @include for-large {
+      padding: 72px 0px 120px 0px;
+      gap: 30px;
+    }
+    @include for-laptop {
+      padding: 72px 0px 109px 0px;
+      gap: 30px;
+    }
+    @include for-tablet {
+      padding: 52px 0px 96px 0px;
+      gap: 30px;
+      flex-direction: column;
+    }
+
+    > li {
+      background-color: var(--background-color);
+      display: flex;
+      flex-direction: column;
+      border-radius: 4px;
+      z-index: 1;
+      @include for-xlarge {
+        width: calc(25% + 10px);
+        //   padding: 24px;
+      }
+      @include for-large {
+        width: calc(25% + 10px);
+        //   padding: 24px;
+      }
+      @include for-laptop {
+        width: calc((100% - 72px) / 3);
+        //   padding: 24px;
+      }
+      @include for-tablet {
+        width: calc(66.66% - 10px);
+        margin: 0 auto;
+      }
+      .cards-card-body {
+        // padding: 0 36px 37px 36px;
+        padding: 0 36px;
+        h3 {
+          font-weight: 700;
+          font-family: $--font-roboto;
+          line-height: 24px;
+          font-size: 24px;
+          text-align: left;
+          text-decoration: underline;
+          opacity: 1;
+          letter-spacing: 0px;
+          margin: 0;
+          padding-top: 36px;
+          color: $--gray-700;
+          span.icon {
+            i {
+              font-size: 32px;
+            }
+          }
+          &:has(a) {
+            color: $--blue-675;
+          }
+        }
+        p {
+          font-weight: 400;
+          font-family: $--font-roboto;
+          line-height: 24px;
+          font-size: 16px;
+          color: $--gray-700;
+          text-align: left;
+          margin: 0;
+          opacity: 1;
+          padding-top: 36px;
+          &:last-child {
+            padding-top: 16px;
+            @include for-xlarge {
+              padding-bottom: 60px;
+            }
+            @include for-large {
+              padding-bottom: 60px;
+            }
+            @include for-laptop {
+              padding-bottom: 64px;
+            }
+            @include for-tablet {
+              padding-bottom: 84px;
+            }
+            @include for-mobile {
+              padding-bottom: 60px;
+            }
+          }
+          > span {
+            width: 100%;
+            height: 100%;
+            border-bottom: 2px solid $--gray-100;
+            padding-bottom: 36px;
+            > img {
+              width: 80px;
+              height: 80px;
+            }
+            > i {
+              font-size: 80px;
+            }
+          }
+        }
+      }
+    }
+  }
+  > .promo-2-column {
+    list-style: none;
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    text-align: center;
+    flex-direction: row;
+    margin: 0;
+    @include for-mobile {
+      padding: 52px 0px 72px 0px;
+      flex-direction: column;
+      gap: 24px;
+    }
+    @include for-xlarge {
+      gap: 30px;
+      padding: 72px 0px 120px 0px;
+    }
+    @include for-large {
+      padding: 72px 0px 120px 0px;
+      gap: 30px;
+    }
+    @include for-laptop {
+      padding: 72px 0px 120px 0px;
+      gap: 30px;
+    }
+    @include for-tablet {
+      padding: 52px 0px 96px 0px;
+      gap: 30px;
+      // flex-wrap: wrap;
+    }
+
+    > li {
+      background-color: var(--background-color);
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      border-radius: 4px;
+      z-index: 1;
+      @include for-xlarge {
+        width: calc((100% - 104px) / 4);
+        //   padding: 24px;
+      }
+      @include for-large {
+        width: calc((100% - 104px) / 4);
+        //   padding: 24px;
+      }
+      @include for-laptop {
+        width: calc((100% - 72px) / 3);
+        //   padding: 24px;
+      }
+      @include for-tablet {
+        width: 50%;
+      }
+      .cards-card-body {
+        // padding: 0 36px 37px 36px;
+        padding: 0 36px;
+        h3 {
+          font-weight: 700;
+          font-family: $--font-roboto;
+          line-height: 24px;
+          font-size: 24px;
+          text-align: left;
+          text-decoration: underline;
+          opacity: 1;
+          letter-spacing: 0px;
+          margin: 0;
+          padding-top: 36px;
+          color: $--gray-700;
+          span.icon {
+            i {
+              font-size: 32px;
+            }
+          }
+          &:has(a) {
+            color: $--blue-675;
+          }
+        }
+        p {
+          font-weight: 400;
+          font-family: $--font-roboto;
+          line-height: 24px;
+          font-size: 16px;
+          color: $--gray-700;
+          text-align: left;
+          margin: 0;
+          opacity: 1;
+          padding-top: 36px;
+          &:has(.button-container) {
+            padding: 0;
+          }
+          &:last-child {
+            padding-top: 16px;
+
+            @include for-xlarge {
+              padding-bottom: 36px;
+            }
+            @include for-large {
+              padding-bottom: 36px;
+            }
+            @include for-laptop {
+              padding-bottom: 36px;
+            }
+            @include for-tablet {
+              padding-bottom: 84px;
+            }
+            @include for-mobile {
+              padding-bottom: 60px;
+            }
+          }
+          > span {
+            width: 100%;
+            height: 100%;
+            border-bottom: 2px solid $--gray-100;
+            padding-bottom: 36px;
+            > img {
+              width: 80px;
+              height: 80px;
+            }
+            > i {
+              font-size: 80px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

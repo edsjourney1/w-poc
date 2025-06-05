@@ -1,0 +1,275 @@
+@import '../../styles/include/_mq.scss';
+@import '../../styles/include/_tokens.scss';
+
+.benefit-block-icon-container {
+  .benefit-block-icon-wrapper {
+    @include for-large {
+      width: calc(100% - 100px);
+      margin: 0 auto;
+    }
+    .benefit-block-icon {
+      display: flex;
+      gap: calc(((100% - (11 * 30px)) / 12) + 60px);
+      align-items: stretch;
+      @include for-xlarge {
+        padding: $--spacing-max 0;
+      }
+      @include for-large {
+        padding: $--spacing-max 0;
+      }
+      @include for-laptop {
+        padding: $--spacing-max $--spacing-xl;
+      }
+      @include for-tablet {
+        flex-direction: column;
+        padding: $--spacing-jumbo $--spacing-xl;
+        gap: unset;
+      }
+      @include for-mobile {
+        flex-direction: column;
+        padding: $--spacing-huge $--spacing-m;
+        gap: unset;
+      }
+      .block-left {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        flex: 1;
+        border-radius: 4px;
+        background-color: $--blue-50;
+        width: calc((100% - 60px) / 12 * 4);
+        padding: $--spacing-jumbo 0;
+        ul,
+        ol {
+          margin: 0 0 12px 0;
+        }
+        @include for-laptop {
+          padding: $--spacing-jumbo 0;
+        }
+        @include for-tablet {
+          width: 100%;
+          padding: $--spacing-jumbo 0;
+        }
+        @include for-mobile {
+          width: 100%;
+          padding: $--spacing-huge 0;
+        }
+        > div {
+          > div {
+            padding: 0 $--spacing-xxl;
+            @include for-laptop {
+              padding: 0 36px;
+            }
+            @include for-tablet {
+              padding: 0 $--spacing-xl 0 $--spacing-xl;
+            }
+            @include for-mobile {
+              padding: 0 $--spacing-xl;
+            }
+            h2 {
+              color: $--gray-700;
+              font-family: $--font-museo;
+              font-size: 32px;
+              font-weight: 700;
+              line-height: 38px;
+              span.icon {
+                i {
+                  font-size: 32px;
+                }
+              }
+              &:has(a) {
+                color: $--blue-550;
+              }
+              margin: 0;
+              @include for-tablet {
+                font-size: 28px;
+                line-height: 33px;
+                span.icon {
+                  i {
+                    font-size: 28px;
+                  }
+                }
+              }
+              @include for-mobile {
+                font-size: 28px;
+                line-height: 33px;
+                span.icon {
+                  i {
+                    font-size: 28px;
+                  }
+                }
+              }
+            }
+            p {
+              color: $--gray-700;
+              font-family: $--font-roboto;
+              font-size: 16px;
+              font-weight: 400;
+              line-height: 24px;
+              margin: 0;
+              padding: $--spacing-l 0 0 0;
+              &:last-child:has(span.icon, a) {
+                padding-top: 36px;
+                padding-bottom: 0;
+                @include for-mobile {
+                  padding-top: $--spacing-l;
+                }
+                @include for-tablet {
+                  padding-top: $--spacing-l;
+                }
+              }
+              span.icon {
+                i {
+                  font-size: 16px;
+                }
+              }
+              @include for-mobile {
+                padding: $--spacing-m 0 0 0;
+              }
+              @include for-tablet {
+                padding: $--spacing-m 0 0 0;
+              }
+            }
+            p:has(a) {
+              a {
+                font-size: 16px;
+                line-height: 19px;
+                font-family: $--font-roboto;
+                font-weight: 500;
+                color: $--blue-675;
+                text-decoration: underline;
+              }
+              span.icon {
+                margin: 0 2px 0 5px;
+                width: auto;
+                height: auto;
+                i {
+                  font-size: 15px;
+                  color: $--blue-675;
+                }
+              }
+              span.icon.icon-light--phone,
+              span.icon.icon-regular--phone,
+              span.icon.icon-phone,
+              span.icon.icon-solid--phone {
+                margin: 0 2px 0 2px;
+              }
+            }
+          }
+        }
+      }
+      .block-right {
+        width: calc((100% / 12) * 7);
+        padding-bottom: $--spacing-xxl;
+        @include for-tablet {
+          width: 100%;
+          padding-bottom: 0;
+        }
+        @include for-mobile {
+          width: 100%;
+          padding-bottom: 0;
+        }
+        > div {
+          display: flex;
+          gap: calc(((100% - (6 * 30px)) / 7) + 60px);
+          @include for-tablet {
+            gap: 30px;
+          }
+          @include for-mobile {
+            flex-direction: column;
+            gap: unset;
+          }
+          > div {
+            padding-top: $--spacing-xxl;
+            width: calc((100% / 7) * 3);
+            @include for-tablet {
+              width: calc(100% / 2);
+            }
+            @include for-mobile {
+              width: 100%;
+            }
+            h2,
+            h3,
+            h4,
+            h5,
+            h6 {
+              font-family: $--font-roboto;
+              font-size: 24px;
+              line-height: 28px;
+              font-weight: 700;
+              margin: 0;
+              color: $--gray-700;
+              &:has(a) {
+                color: $--blue-675;
+              }
+              span.icon {
+                margin: 0 2px 0 5px;
+                width: auto;
+                height: auto;
+                i {
+                  font-size: 20px;
+                }
+              }
+              span.icon.icon-light--phone,
+              span.icon.icon-regular--phone,
+              span.icon.icon-phone,
+              span.icon.icon-solid--phone {
+                margin: 0 2px 0 2px;
+              }
+            }
+            span {
+              margin: 0;
+              span {
+                height: 64px;
+                width: 64px;
+                padding-bottom: 24px;
+                i {
+                  font-size: 64px;
+                }
+              }
+            }
+            p {
+              color: $--gray-700;
+              font-family: $--font-roboto;
+              font-size: 16px;
+              font-weight: 400;
+              line-height: 24px;
+              margin: 0;
+              padding-top: $--spacing-s;
+              span.icon {
+                margin: 0 2px 0 5px;
+                width: auto;
+                height: auto;
+                i {
+                  font-size: 16px;
+                }
+              }
+              span.icon.icon-light--phone,
+              span.icon.icon-regular--phone,
+              span.icon.icon-phone,
+              span.icon.icon-solid--phone {
+                margin: 0 2px 0 2px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.benefit-block-icon-container.two-column-layout {
+  .benefit-block-icon-wrapper {
+    .benefit-block-icon {
+      align-items: center;
+    }
+  }
+}
+.background-blue-50 {
+  .block-left {
+    background-color: $--white;
+  }
+}
+.icon-phone,
+.icon-solid--phone {
+  margin: 0 2px 0 2px;
+}

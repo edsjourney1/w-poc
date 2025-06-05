@@ -1,0 +1,759 @@
+@import '../../styles/include/tokens.scss';
+@import '../../styles/include/mq.scss';
+
+body.article-page,
+body.article-tag-landing {
+  .marketo-form-fragment {
+    &-container {
+      background-color: $--blue-100;
+    }
+  }
+  form.eds-mkto-form {
+    .mktoFormRow {
+      h1 {
+        font-family: $--font-museo;
+        text-align: center;
+        padding: 0;
+        margin: 0;
+      }
+    }
+  }
+  #ty-msg {
+    @include for-large {
+      width: calc(100% - 104px);
+    }
+    @include for-laptop {
+      width: calc(100% - 72px);
+    }
+    @include for-tablet {
+      width: calc(100% - 72px);
+    }
+    @include for-mobile {
+      width: calc(100% - 32px);
+    }
+  }
+}
+.marketo-form-fragment {
+  &-container {
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+    .eds-mkto-form {
+      flex-direction: column;
+    }
+    .mktoFieldWrap {
+      width: 100%;
+    }
+    .mktoFormRow {
+      display: flex;
+      flex-direction: row;
+      margin: 0 -15px;
+      width: calc(100% + 30px);
+      @include for-mobile {
+        flex-direction: column;
+      }
+      &:has(.marketing-medicare),
+      &:has(.medicare-iowa),
+      &:has(.medicare-south-dakota),
+      &:has(.marketing-medicareguide),
+      &:has(.medicare-under-65),
+      &:has(.medicare-over-65),
+      &:has(.medicare-questions),
+      &:has(.shop-medicare-plans),
+      &:has(.quiz-result-headings) {
+        display: none;
+      }
+      &:has(br:first-child) {
+        margin: 0 -15px;
+        padding: 0;
+        line-height: 0;
+        .mktoFormCol {
+          margin-bottom: 0;
+        }
+        .mktoFieldDescriptor {
+          margin-bottom: 24px;
+        }
+      }
+    }
+    .mktoFormCol {
+      padding: 0 15px;
+      width: 100%;
+    }
+    input,
+    select,
+    textarea {
+      width: 100%;
+    }
+    .loader {
+      border: 10px solid $--gray-100; /* Light grey */
+      border-top: 10px solid $--blue-775; /* Blue */
+      border-radius: 50%;
+      width: 100px;
+      height: 100px;
+      animation: spin 2s linear infinite;
+      margin: auto;
+    }
+
+    @keyframes spin {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+    #ty-msg {
+      border-left: 10px solid $--green-550;
+      border-radius: 2px;
+      padding: 24px;
+      gap: 16px;
+      background-color: $--green-50;
+      margin-bottom: 72px;
+      #ty-icon {
+        width: fit-content;
+        margin-bottom: 0;
+        .icon-solid--circle-check {
+          height: 29px;
+          width: 29px;
+          margin-right: 0;
+          .fa-circle-check {
+            font-size: 29px;
+            color: $--green-550;
+          }
+        }
+      }
+      #ty-txt {
+        * {
+          margin-top: 0;
+        }
+        h3 {
+          font-size: 20px;
+          margin-bottom: 4px;
+        }
+        .ty-reload {
+          background-color: $--primary-675;
+          color: $--white;
+          text-decoration: none;
+          border: 1px solid $--blue-775;
+          border-radius: 2px;
+          font-size: 18px;
+          font-weight: 500;
+          padding: 12px 36px;
+          cursor: pointer;
+        }
+        .icon-file-pdf {
+          margin-left: 5px;
+          margin-right: 2px;
+          height: 16px;
+          width: 16px;
+          .fa-file-pdf {
+            font-size: 16px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.marketo-form-fragment.block {
+  box-sizing: border-box;
+  & > div {
+    &:first-child {
+      display: none;
+    }
+  }
+}
+
+.section.marketo-form-fragment-container div.marketo-form-fragment-wrapper {
+  max-width: unset;
+}
+
+.section.no-padding-top {
+  form {
+    padding-top: 0 !important;
+  }
+  #ty-msg {
+    margin-top: 0 !important;
+  }
+}
+
+.section.no-padding-bottom {
+  form {
+    padding-bottom: 0 !important;
+  }
+  #ty-msg {
+    margin-bottom: 0 !important;
+  }
+}
+
+.section.ty-padding-large {
+  #ty-msg {
+    margin: 120px 0 120px 0 !important;
+  }
+}
+
+form.eds-mkto-form {
+  margin: 0 auto;
+  max-width: 1275px;
+  width: 100%;
+  padding: 120px 400px;
+  @media (min-width: 1600px) {
+    padding: 120px 540px;
+  }
+  @include for-large {
+    width: calc(100% - 104px);
+  }
+  @include for-laptop {
+    width: calc(100% - 72px);
+  }
+  @include for-tablet {
+    width: calc(100% - 72px);
+  }
+  @include for-mobile {
+    width: calc(100% - 32px);
+  }
+  .mktoFormRow {
+    width: 100%;
+    &:has(h1) + .mktoFormRow {
+      p {
+        text-align: center;
+      }
+    }
+  }
+
+  p {
+    display: block;
+  }
+  &.mktoForm {
+    margin: auto;
+    padding: 120px 0 120px 0;
+    b,
+    i,
+    strong,
+    small,
+    sup,
+    sub {
+      padding: 0;
+    }
+    @include for-xlarge {
+      margin: auto;
+      padding: 120px 0 120px 0;
+    }
+    @include for-large {
+      margin: auto;
+      padding: 120px 0 120px 0;
+    }
+    @include for-laptop {
+      padding: 108px 0 108px 0;
+    }
+    @include for-tablet {
+      padding: 96px 0 96px 0;
+    }
+    @include for-mobile {
+      width: 100%;
+      padding: 72px 0 72px 0;
+      .mktoFormRow {
+        .mktoFieldWrap {
+          input,
+          select.mktoField,
+          textarea.mktoField {
+            line-height: 1em;
+            font-size: 1em;
+            height: unset;
+          }
+        }
+      }
+    }
+    .icon {
+      font-family: 'Font Awesome 6 Pro', sans-serif;
+      margin-right: 8px;
+      &.icon-solid--triangle-exclamation {
+        width: 13px;
+        height: 11px;
+      }
+      .fa-triangle-exclamation {
+        font-size: 13px;
+        color: $--red-550;
+        padding: 0;
+      }
+      &.icon-solid--envelope {
+        margin-left: 4px;
+        .fa-envelope {
+          font-size: 16px;
+          color: $--gray-700;
+        }
+      }
+    }
+    .mkto-error-block {
+      width: 100%;
+      border-radius: 2px;
+      border-left: 10px solid rgba(180, 66, 66, 1);
+      opacity: 1;
+      background-color: #fff5f5;
+      // border-radius: 0.5em;
+      border-radius: 2px;
+      margin-bottom: 24px;
+      &:not(:has(.error-summary)) {
+        margin-bottom: 0;
+      }
+      .error-summary {
+        display: flex;
+        margin: 24px;
+        padding: 24px 0;
+        .error-icon-block {
+          margin: auto 0;
+          .icon {
+            height: 29px;
+            width: 29px;
+            .fa-triangle-exclamation {
+              font-size: 29px;
+              color: rgba(180, 66, 66, 1);
+            }
+          }
+        }
+        .error-content-block {
+          color: $--gray-100;
+          margin-left: 1em;
+          .heading {
+            font-weight: 600;
+            opacity: 1;
+            color: rgba(75, 76, 77, 1);
+            font-family: 'Roboto-Bold';
+            font-size: 20px;
+            font-weight: 700;
+            font-style: Bold;
+            letter-spacing: 0px;
+            text-align: left;
+          }
+          a {
+            color: rgba(75, 76, 77, 1);
+            font-weight: 400;
+          }
+          ul {
+            list-style-type: none;
+            padding: 0;
+            opacity: 1;
+            font-family: 'Roboto-Regular';
+            font-size: 16px;
+            font-weight: 400;
+            letter-spacing: 0px;
+            text-align: left;
+            line-height: 24px;
+            text-decoration: underline;
+            li {
+              padding: 0;
+            }
+          }
+        }
+      }
+    }
+    .mktoFormRow {
+      .mktoOffset {
+        display: none;
+      }
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        margin: 0;
+        padding: 0;
+      }
+      div {
+        div {
+          width: 100%;
+          label {
+            width: 100%;
+            font-weight: 500;
+            color: $--gray-700;
+            font-family: $--font-roboto;
+            font-size: 16px;
+            line-height: 1em;
+            padding-top: 0;
+            margin-bottom: 8px;
+          }
+          input,
+          textarea,
+          select {
+            width: 100%;
+            font-weight: 400;
+            color: $--gray-700;
+            font-family: $--font-roboto;
+            font-size: 16px;
+            padding: 16px 20px;
+            border-radius: 2px;
+            border: 2px solid $--gray-500;
+            opacity: 1;
+            background-color: $--white;
+            // when input validation errors
+            &:has(+ .mktoError) {
+              border: 2px solid $--red-550;
+            }
+            &:not(:has(+ .mktoError:not([style*='display: none']))) {
+              border: 2px solid $--gray-500;
+              box-shadow: none;
+            }
+            // on focus
+            &:focus {
+              outline: none;
+              border: 2px solid $--gray-500;
+              // prevent red bleeding
+              box-shadow: none;
+            }
+            &.mktoField {
+              float: none;
+              &:focus {
+                outline: 2px dashed $--orange-450;
+                outline-offset: 2px;
+              }
+            }
+          }
+          .mkto-radio-list {
+            position: relative;
+            display: inline-block;
+          }
+          .mkto-radio-list input[type='radio'] {
+            position: relative;
+            width: 20px;
+            height: 20px;
+            &:focus {
+              outline: none;
+            }
+          }
+          .mkto-radio-list input[type='radio']:focus::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 28px;
+            height: 28px;
+            border: 2px dashed $--orange-450;
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            pointer-events: none;
+          }
+          .mkto-checkbox-list {
+            position: relative;
+            display: inline-block;
+            .mktoLabel {
+              float: none;
+              vertical-align: super;
+              margin-left: 8px;
+            }
+          }
+
+          .mkto-checkbox-list input[type='checkbox'] {
+            position: relative;
+            width: 24px;
+            height: 24px;
+            &:focus {
+              outline: none;
+            }
+          }
+
+          .mkto-checkbox-list input[type='checkbox']:focus::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 28px;
+            height: 28px;
+            border: 2px dashed $--orange-450;
+            border-radius: 6px;
+            transform: translate(-50%, -50%);
+            pointer-events: none;
+          }
+          select {
+            appearance: none;
+          }
+          textarea {
+            height: 100px;
+            resize: none;
+          }
+          .mktoError,
+          .mktoErrors {
+            position: static;
+            .mktoErrorArrowWrap {
+              display: none;
+            }
+            .mktoErrorMsg {
+              border-top: none;
+              border: none;
+              background-image: none;
+              border-radius: 2px;
+              opacity: 1;
+              background-color: $--red-100;
+              color: $--gray-700;
+              text-shadow: none;
+              border-left: 5px solid $--red-550;
+              margin-top: 8px;
+              max-width: none;
+              padding: 8px 10px;
+              font-size: 13px;
+              line-height: 16px;
+              font-weight: bold;
+              font-family: TradeGothicNextLTPro-Bold, sans-serif;
+              width: 100%;
+              box-sizing: border-box;
+              box-shadow: none;
+            }
+          }
+        }
+      }
+      .mktoRadioList {
+        width: 100%;
+        input.mktoField {
+          width: 24px;
+          height: 24px;
+          // radio select color
+          accent-color: $--blue-675;
+          display: inline-block;
+          margin-bottom: 8px;
+        }
+        label {
+          margin: 0;
+          margin-left: 9px;
+          display: inline-block;
+          width: calc(100% - 36px);
+          vertical-align: super;
+          font-weight: normal;
+        }
+      }
+      .mktoFieldWrap {
+        .mktoRadioList,
+        .mktoCheckboxList {
+          padding: 0;
+          & > label {
+            display: none;
+          }
+        }
+        .mktoHtmlText {
+          width: 100%;
+          p {
+            color: $--gray-700;
+            font-family: $--font-roboto;
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 24px;
+          }
+          .heading1 {
+            font-size: 40px;
+            line-height: 47px;
+            font-weight: 700;
+          }
+          .heading2 {
+            font-size: 32px;
+            line-height: 31px;
+            font-weight: 700;
+          }
+          .heading3 {
+            font-size: 24px;
+            line-height: 24px;
+            font-weight: 700;
+          }
+          .heading4 {
+            font-size: 20px;
+            line-height: 21px;
+            font-weight: 700;
+          }
+          .required {
+            color: $--gray-700;
+            font-family: $--font-roboto;
+            font-size: 12px;
+            font-weight: 500;
+            line-height: 20px;
+            font-style: italic;
+            text-align: left;
+            .asterisk {
+              color: $--red-550;
+            }
+          }
+          .legend {
+            font-size: 28px;
+            line-height: 28px;
+            font-weight: bold;
+            @include for-nonmobile {
+              font-size: 32px;
+              line-height: 31px;
+            }
+          }
+          a#consent-link {
+            &:focus {
+              outline: 2px dashed $--orange-450;
+              outline-offset: 2px;
+            }
+          }
+          div {
+            & > *:not(:last-child) {
+              margin-bottom: 24px;
+            }
+          }
+          .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.4);
+            .modal-content {
+              background-color: $--white;
+              margin: 15% auto;
+              padding: 20px;
+              border: 1px solid $--green-550;
+              width: 50%;
+              h3 {
+                margin-top: 12px;
+              }
+              h3,
+              p {
+                width: 100%;
+              }
+            }
+          }
+          .btn-close {
+            float: right;
+            border: none;
+            background-color: transparent;
+            padding-right: 8px;
+            &:focus {
+              outline: 3px solid $--orange-450;
+              outline-offset: 2px;
+            }
+            .close {
+              color: $--blue-675;
+              float: right;
+              font-size: 16px;
+              font-weight: bold;
+              text-transform: uppercase;
+              margin-right: 5px;
+              &:focus,
+              &:hover {
+                text-decoration: none;
+                cursor: pointer;
+              }
+            }
+            .fa-circle-xmark {
+              font-family: 'Font Awesome 6 Pro', sans-serif;
+              font-size: 20px;
+              color: $--blue-675;
+              cursor: pointer;
+            }
+          }
+        }
+        &:has(p:not(:empty)) {
+          display: block;
+        }
+        &.mktoRequiredField {
+          label:has(.mktoAsterix) {
+            display: inline-block;
+            .mktoAsterix {
+              margin-left: 4px;
+              display: inline;
+              padding: 0;
+              width: fit-content;
+              float: none;
+              color: $--red-550;
+            }
+          }
+        }
+        &:has(input[type='checkbox']) {
+          .mktoGutter,
+          .mktoClear {
+            width: 0;
+          }
+          .mktoCheckboxList {
+            width: auto;
+          }
+          label {
+            line-height: 1.2em;
+            margin-bottom: 0;
+          }
+        }
+        &:has(select) {
+          position: relative;
+          display: inline-block;
+          &::after {
+            content: '';
+            position: absolute;
+            top: 65%;
+            right: 10px;
+            width: 0;
+            height: 0;
+            border-left: 7px solid transparent;
+            border-right: 7px solid transparent;
+            border-top: 7px solid black;
+            transform: translateY(-50%);
+            pointer-events: none;
+          }
+          &:has(.mktoError:not([style*='display: none'])),
+          &:has(.mktoErrors:not([style*='display: none'])) {
+            &::after {
+              top: 40%;
+            }
+          }
+        }
+      }
+      .mktoFormCol {
+        margin-bottom: 24px;
+        &:has(.mktoFieldWrap:empty) {
+          min-height: 0;
+        }
+        &:has(.mktoHtmlText:not(p)) {
+          min-height: 0;
+        }
+        &:has(#ty-msg, script:first-child, #dl-form-name) {
+          margin-bottom: 0;
+        }
+        .mktoHtmlText {
+          .consent1 {
+            font-size: 12px;
+            line-height: 20px;
+          }
+          #hidden-content {
+            display: none;
+            margin-top: 24px;
+            p {
+              font-size: 12px;
+              line-height: 20px;
+            }
+          }
+        }
+      }
+    }
+    .mktoButtonRow {
+      margin-top: 12px;
+      overflow: unset;
+      .mktoButton {
+        height: unset;
+        text-shadow: unset;
+        box-shadow: unset;
+        color: $--white;
+        border-radius: 2px;
+        background: $--blue-675;
+        background-color: $--blue-675;
+        text-decoration: none;
+        &:focus {
+          outline: 2px dashed $--orange-450;
+          outline-offset: 2px;
+        }
+      }
+    }
+  }
+}
+
+.marketo-form-fragment-container {
+  form.eds-mkto-form .mktoFormRow {
+    width: calc(100% + 30px);
+  }
+  @include for-mobile {
+    form.eds-mkto-form.mktoForm {
+      width: calc(100% - 32px);
+    }
+  }
+}

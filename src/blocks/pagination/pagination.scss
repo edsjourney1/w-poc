@@ -1,0 +1,108 @@
+@import '../../styles/include/_mq.scss';
+@import '../../styles/include/_tokens.scss';
+
+.section.pagination-container {
+  .pagination-wrapper {
+    @include for-large {
+      width: calc(100% - 104px);
+    }
+    @include for-laptop {
+      width: calc(100% - 74px);
+    }
+    @include for-tablet {
+      width: calc(100% - 72px);
+    }
+    @include for-mobile {
+      width: calc(100% - 32px);
+    }
+    .pagination.block {
+      border-top: 2px solid $--gray-225;
+      .pagination-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 38px;
+        @include for-tablet {
+          flex-direction: column;
+        }
+        @include for-mobile {
+          flex-direction: column;
+        }
+        .count-list {
+          display: flex;
+          align-items: center;
+          @include for-tablet {
+            padding-bottom: 24px;
+          }
+          @include for-mobile {
+            padding-bottom: 24px;
+          }
+          p {
+            margin: 0;
+          }
+          span {
+            margin: 0 5px;
+          }
+        }
+        .count-result {
+          display: flex;
+          justify-content: space-evenly;
+          align-items: center;
+          height: 31px;
+          button {
+            margin: 0;
+            width: 32px;
+            text-align: center;
+            border: 1px solid #757575;
+            color: $--gray-700;
+            padding: 4px 0 3px 0;
+            font-size: 16px;
+            line-height: 24px;
+            border-radius: 2px;
+            text-decoration: none;
+            font-weight: 700;
+            font-family: $--font-roboto;
+            background-color: transparent;
+            margin-right: 12px;
+            &:last-of-type {
+              margin-right: 0;
+            }
+            &.active {
+              background-color: $--blue-675;
+              color: $--white;
+            }
+          }
+          p {
+            &:has(i) {
+              margin: 6px 0 5px 0;
+            }
+            i {
+              color: $--blue-675;
+              font-size: 20px;
+              font-weight: 700;
+              padding: 0 20px;
+            }
+            &:first-child {
+              i {
+                padding: 0;
+              }
+            }
+            &:last-child {
+              i {
+                padding: 0;
+              }
+            }
+          }
+          .dp-none {
+            display: none;
+          }
+          .dp-blur {
+            i {
+              color: $--gray-225;
+            }
+          }
+        }
+      }
+    }
+  }
+}

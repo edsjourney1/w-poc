@@ -1,0 +1,53 @@
+@import '../../styles/include/_mq.scss';
+@import '../../styles/include/_tokens.scss';
+
+.blog-wrapper {
+  display: flex;
+  gap: 30px;
+  @include for-xlarge {
+    padding: 120px 0;
+  }
+  @include for-large {
+    padding: 120px 52px;
+  }
+  @include for-laptop {
+    padding: 120px 36px;
+  }
+  @include for-tablet {
+    padding: 96px 36px;
+    flex-direction: column;
+    gap: 0;
+  }
+  @include for-mobile {
+    padding: 72px 16px;
+    flex-direction: column;
+    gap: 0;
+  }
+  .new-block {
+    width: calc((100% + 30px) / 12 * 8);
+    @include for-tablet {
+      width: 100%;
+    }
+    @include for-mobile {
+      width: 100%;
+    }
+  }
+  .blog-new-stories-wrapper {
+    width: calc((100% + 30px) / 12 * 8);
+    @include for-tablet {
+      width: 100%;
+    }
+    @include for-mobile {
+      width: 100%;
+    }
+  }
+  .blog-top-stories-wrapper {
+    width: calc((100% - 30px) / 12 * 4);
+    @include for-tablet {
+      width: 100%;
+    }
+    @include for-mobile {
+      width: 100%;
+    }
+  }
+}

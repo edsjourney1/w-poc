@@ -1,0 +1,343 @@
+@import '../../styles/include/_mq.scss';
+@import '../../styles/include/_tokens.scss';
+
+.blog-article-listing-wrapper {
+  padding: 120px 0 120px 0;
+  @include for-mobile {
+    padding: 72px 0 72px 0;
+  }
+  @include for-tablet {
+    padding: 96px 0 96px 0;
+  }
+}
+.blog-article-listing {
+  @include for-large {
+    padding: 0 52px;
+  }
+  @include for-laptop {
+    padding: 0 36px;
+  }
+  @include for-mobile {
+    padding: 0 16px;
+  }
+  @include for-tablet {
+    padding: 0 36px;
+  }
+  .heading-div {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    // padding-top: 120px;
+    padding-bottom: 52px;
+    @include for-mobile {
+      // padding-top: 72px;
+      flex-direction: column;
+      gap: 24px;
+    }
+    @include for-tablet {
+      // padding-top: 96px;
+      flex-direction: column;
+      gap: 24px;
+    }
+    > .title {
+      opacity: 1;
+      color: $--gray-700;
+      font-family: $--font-museo;
+      font-size: 32px;
+      font-weight: 600;
+      letter-spacing: 0px;
+      text-align: left;
+      margin: 0;
+      @include for-xlarge {
+        width: calc(75% - 6px);
+      }
+      @include for-large {
+        width: calc(75% - 6px);
+      }
+      @include for-laptop {
+        width: calc(70% - 10px);
+      }
+      @include for-mobile {
+        width: 100%;
+        font-size: 28px;
+      }
+      @include for-tablet {
+        width: 100%;
+      }
+    }
+    > .text-icon {
+      > p {
+        opacity: 1;
+        color: $--blue-675;
+        font-family: $--font-roboto;
+        font-size: 16px;
+        font-weight: 500;
+        letter-spacing: 0px;
+        text-align: right;
+        text-decoration: underline;
+        margin: 0;
+        > span {
+          height: unset;
+          width: unset;
+          > i {
+            color: $--blue-675;
+            font-size: 15px;
+            padding-left: 6px;
+          }
+        }
+      }
+    }
+  }
+  .cards-div {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 30px;
+    row-gap: 36px;
+    padding-bottom: 58px;
+    @include for-laptop {
+      padding-bottom: 52px;
+    }
+    @include for-mobile {
+      flex-direction: column;
+      padding-bottom: 52px;
+    }
+    @include for-tablet {
+      flex-direction: column;
+      padding-bottom: 52px;
+    }
+    > .card-div {
+      @include for-xlarge {
+        width: calc((100% / 3) - 20px);
+      }
+      @include for-large {
+        width: calc((100% / 3) - 20px);
+      }
+      @include for-laptop {
+        width: calc((100% / 3) - 20px);
+      }
+      @include for-mobile {
+        width: 100%;
+      }
+      @include for-tablet {
+        width: 100%;
+      }
+      .image-div {
+        a {
+          display: block;
+          width: 100%;
+          position: relative;
+          height: 0;
+          overflow: hidden;
+          @include for-xlarge {
+            padding-bottom: 58.13%;
+          }
+          @include for-large {
+            padding-bottom: 58.13%;
+          }
+          @include for-laptop {
+            padding-bottom: 73.13%;
+          }
+          @include for-tablet {
+            padding-bottom: 64.13%;
+          }
+          @include for-mobile {
+            padding-bottom: 60.11%;
+          }
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 4px;
+            cursor: pointer;
+          }
+        }
+      }
+
+      > .content-div {
+        .card-title {
+          @include for-xlarge {
+            padding-top: 29px;
+          }
+          @include for-large {
+            padding-top: 29px;
+          }
+          @include for-laptop {
+            padding-top: 26px;
+          }
+          @include for-mobile {
+            padding-top: 26px;
+          }
+          @include for-tablet {
+            padding-top: 26px;
+          }
+          margin: 0;
+          padding-bottom: 8px;
+          a {
+            opacity: 1;
+            color: $--blue-675;
+            font-family: $--font-roboto;
+            font-size: 24px;
+            font-weight: 700;
+            letter-spacing: 0px;
+            text-align: left;
+            text-decoration: underline;
+            margin: 0;
+            cursor: pointer;
+          }
+        }
+        > .date-div {
+          display: flex;
+          position: relative;
+          gap: 13px;
+          padding-bottom: 12px;
+          > .date {
+            margin: 0;
+            opacity: 1;
+            color: $--gray-700;
+            font-family: $--font-roboto;
+            font-size: 16px;
+            font-weight: 400;
+            letter-spacing: 0px;
+            text-align: left;
+            line-height: 24px;
+            position: relative;
+            &::after {
+              content: '•';
+              position: absolute;
+              right: -9px;
+              top: 55%;
+              transform: translateY(-50%);
+              font-size: 16px;
+              color: $--gray-700;
+            }
+          }
+          > .read-time {
+            margin: 0;
+            opacity: 1;
+            color: $--gray-700;
+            font-family: $--font-roboto;
+            font-size: 16px;
+            font-weight: 400;
+            letter-spacing: 0px;
+            text-align: left;
+            line-height: 24px;
+          }
+        }
+        > .category-list {
+          margin: 0;
+          overflow-wrap: break-word;
+          > a {
+            opacity: 1;
+            color: $--blue-675;
+            font-family: $--font-roboto;
+            font-size: 16px;
+            font-weight: 500;
+            letter-spacing: 0px;
+            text-align: left;
+            text-decoration: underline;
+            margin-right: 12px;
+            white-space: nowrap;
+            &:last-child {
+              margin: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+  .pagination {
+    border-top: 2px solid $--gray-225;
+    .pagination-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 38px;
+      @include for-tablet {
+        flex-direction: column;
+      }
+      @include for-mobile {
+        flex-direction: column;
+      }
+      .count-list {
+        display: flex;
+        align-items: center;
+        @include for-tablet {
+          padding-bottom: 24px;
+        }
+        @include for-mobile {
+          padding-bottom: 24px;
+        }
+        p {
+          margin: 0;
+        }
+        span {
+          margin: 0 5px;
+        }
+      }
+      .count-result {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        height: 31px;
+        button {
+          margin: 0;
+          width: 32px;
+          text-align: center;
+          border: 1px solid #757575;
+          color: $--gray-700;
+          padding: 4px 0 3px 0;
+          font-size: 16px;
+          line-height: 24px;
+          border-radius: 2px;
+          text-decoration: none;
+          font-weight: 700;
+          font-family: $--font-roboto;
+          background-color: transparent;
+          margin-right: 12px;
+          cursor: pointer;
+          &:last-of-type {
+            margin-right: 0;
+          }
+          &.active {
+            background-color: $--blue-675;
+            color: $--white;
+          }
+        }
+        p {
+          &:has(i) {
+            margin: 6px 0 5px 0;
+          }
+          i {
+            color: $--blue-675;
+            font-size: 20px;
+            font-weight: 700;
+            padding: 0 20px;
+            cursor: pointer;
+          }
+          &:first-child {
+            i {
+              padding: 0;
+            }
+          }
+          &:last-child {
+            i {
+              padding: 0;
+            }
+          }
+        }
+        .dp-none {
+          display: none;
+        }
+        .dp-blur {
+          i {
+            color: $--gray-225;
+          }
+        }
+      }
+    }
+  }
+}

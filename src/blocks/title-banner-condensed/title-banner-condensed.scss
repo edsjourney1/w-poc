@@ -1,0 +1,246 @@
+@import '../../styles/include/_mq.scss';
+@import '../../styles/include/_tokens.scss';
+
+.title-banner-condensed-container {
+  background-image: linear-gradient(
+    270deg,
+    rgba(166, 198, 221, 1) 0%,
+    rgba(148, 182, 206, 1) 0%,
+    rgba(73, 115, 144, 1) 100%
+  );
+  @include for-xlarge {
+    background-image: linear-gradient(
+      270deg,
+      rgba(166, 198, 221, 1) 0%,
+      rgba(148, 182, 206, 1) 0%,
+      rgba(73, 115, 144, 1) 100%
+    );
+  }
+  @include for-tablet {
+    background: $--blue-550;
+  }
+  @include for-mobile {
+    background: $--blue-550;
+  }
+  .title-banner-condensed-wrapper {
+    @include for-large {
+      width: calc(100% - 100px);
+    }
+    .title-banner-condensed {
+      &.block {
+        padding: 71px 0 51px 0;
+        @include for-tablet {
+          padding: $--spacing-huge 0 $--spacing-huge $--spacing-xl;
+        }
+        @include for-laptop {
+          padding: 71px 0 71px 35px;
+        }
+        @include for-mobile {
+          width: 100%;
+          padding: $--spacing-xxl 0 $--spacing-xxl 0;
+        }
+        .tbnr-maindiv {
+          @include for-xlarge {
+            width: calc(((100% / 12) * 8) - 10px);
+          }
+          @include for-large {
+            width: calc(((100% / 12) * 8) - 10px);
+          }
+          @include for-laptop {
+            width: calc(((100% / 12) * 9) - 30px);
+          }
+          @include for-tablet {
+            width: calc(((100% / 6) * 5) - 30px);
+          }
+          .tbnr-textcont {
+            span.icon {
+              margin: 0 2px 0 5px;
+              width: auto;
+              height: auto;
+            }
+            span.icon.icon-light--phone,
+            span.icon.icon-regular--phone,
+            span.icon.icon-phone,
+            span.icon.icon-solid--phone {
+              margin: 0 2px 0 2px;
+            }
+            @include for-mobile {
+              padding: 0 16px;
+            }
+            .title {
+              color: $--white;
+              font-family: $--font-museo;
+              font-size: 60px;
+              line-height: 72px;
+              font-weight: 300;
+              margin-top: 0;
+              margin-bottom: $--spacing-l;
+              a {
+                color: $--white;
+                &:hover {
+                  color: $--blue-550;
+                }
+              }
+              span.icon {
+                i {
+                  font-size: 40px;
+                }
+              }
+              @include for-mobile {
+                margin-bottom: $--spacing-s;
+                font-size: 40px;
+                line-height: 48px;
+                span.icon {
+                  i {
+                    font-size: 24px;
+                  }
+                }
+              }
+              @include for-tablet {
+                margin-bottom: $--spacing-s;
+              }
+            }
+            .description {
+              color: $--white;
+              font-family: $--font-roboto;
+              font-size: 16px;
+              line-height: 24px;
+              font-weight: 400;
+              font-style: normal;
+              margin: 0;
+              padding-bottom: 24px;
+              a {
+                color: $--white;
+                &:hover {
+                  color: $--blue-550;
+                }
+              }
+              span.icon {
+                i {
+                  font-size: 16px;
+                  color: $--white;
+                  &:hover {
+                    color: $--blue-550;
+                  }
+                }
+              }
+            }
+            .description:has(+ ol), .description:has(+ ul) {
+              margin-bottom: 24px;
+              padding-bottom: 0;
+            }
+            ol,
+            ul {
+              margin: 0;
+              &:not(ol ol, ul ul, ol ul, ul ol) {
+                padding-left: 18px;
+                width: 100%;
+              }
+              &:last-child {
+                margin-bottom: 0;
+              }
+              li {
+                color: $--white;
+                font-family: $--font-roboto;
+                font-size: 16px;
+                line-height: 24px;
+                font-weight: 400;
+                margin-bottom: 12px;
+                a {
+                  color: $--white;
+                  &:hover {
+                    color: $--blue-550;
+                  }
+                }
+                &:last-child {
+                  margin-bottom: 0;
+                }
+                span.icon {
+                  i {
+                    font-size: 16px;
+                  }
+                }
+                ul,
+                ol {
+                  li {
+                    &:first-child {
+                      margin-top: 12px;
+                    }
+                  }
+                }
+              }
+            }
+            .tbnr-btn {
+              padding-top: $--spacing-xl;
+              display: flex;
+              gap: 24px;
+              @include for-tablet {
+                padding-top: $--spacing-l;
+              }
+              @include for-mobile {
+                flex-direction: column;
+                gap: 16px;
+                padding-top: $--spacing-l;
+              }
+              .button-container {
+                margin: 0;
+                span.icon {
+                  margin: 0 12px 0 0px;
+                  width: auto;
+                  height: auto;
+                }
+              }
+              p {
+                a.button {
+                  span.icon {
+                    margin: 0 12px 0 0;
+                    width: auto;
+                    height: auto;
+                  }
+                }
+              }
+              &:has(p.button-container + p:not(.button-container)) {
+                flex-direction: column;
+                gap: 24px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  &.sm-title {
+    .title-banner-condensed-wrapper {
+      .title-banner-condensed {
+        &.block {
+          .tbnr-maindiv {
+            .tbnr-textcont {
+              @include for-tablet-smallest {
+                .title {
+                  font-size: 36px;
+                  line-height: 42px;
+                  span.icon {
+                    i {
+                      font-size: 36px;
+                    }
+                  }
+                }
+              }
+              @include for-mobile {
+                .title {
+                  font-size: 28px;
+                  line-height: 36px;
+                  span.icon {
+                    i {
+                      font-size: 28px;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

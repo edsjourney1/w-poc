@@ -1,0 +1,1 @@
+let ArticleHelper=(e,l)=>{this.x=e,this.y=l,this.init=()=>{console.log("---------------",e),console.log("---------------",l)}};export default ArticleHelper;

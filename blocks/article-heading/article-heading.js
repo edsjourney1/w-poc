@@ -1,0 +1,1 @@
+export default function decorate(e){var t=e?.children[0].textContent,n=e?.children[1].textContent,d=document.createElement("div"),a=document.createElement("h2"),t=(a.append(t),a.classList.add("title"),document.createElement("p"));t.classList.add("description"),t.append(n),d.append(a,t),e&&(e.innerHTML=""),e?.append(d)}
