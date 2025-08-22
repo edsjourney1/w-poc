@@ -1,7 +1,7 @@
 indices:
   sheetless:
     include:
-      - /**
+      - '/**'
     exclude:
       - /search
       - /images/**
