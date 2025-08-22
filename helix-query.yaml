@@ -1,5 +1,5 @@
 indices:
-  default:
+  sheetless:
     include:
       - /**
     exclude:
