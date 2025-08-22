@@ -413,5 +413,6 @@ async function loadPage() {
   await loadLazy(document);
   loadDelayed();
 }
-loadPage();
 console.log("Sheet Less testing")
+loadPage();
+
