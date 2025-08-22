@@ -18,6 +18,7 @@ export default function decorate(block) {
     const leftText = imageLeftChild.children[1];
     leftText.classList.add('col-content-text');
     leftImage.classList.add('col-img-text');
+    console.log('sdf');
   });
 
   setTimeout(() => {
