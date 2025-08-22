@@ -9,7 +9,7 @@ indices:
       - '/de'
       - '/profiles/**'
       - '/drafts/**'
-    target: s3://query-index-search-sheetless.json
+    target: s3://productwmk-edsproject.json
     properties:
       title:
         select: head > meta[property="og:title"]
