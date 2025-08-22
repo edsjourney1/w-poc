@@ -29,7 +29,7 @@ indices:
       - /error-404
       - /error-403
       - /error-500
-    target: /search-index.json
+    target: s3://search-index-sheetless.json
     properties:
       url:
         select: head > meta[property="og:url"]
@@ -249,4 +249,3 @@ indices:
         select: head > meta[property="funding-units"]
         value: |
           attribute(el, "content")
-
