@@ -12,7 +12,7 @@ indices:
     target: s3://productwmk-edsproject.json
     properties:
       title:
-        select: head > meta[property="og:title"]
+        select: head > meta[property="title"]
         value: attribute(el, "content")
       description:
         select: head > meta[name="description"]
