@@ -3,6 +3,7 @@ export default function decorate(block) {
   if (!block || !block.parentElement || !block.parentElement.parentElement) {
     return;
   }
+  console.log("From titleBanner")
 
   const parentEle = block.parentElement.parentElement;
 
