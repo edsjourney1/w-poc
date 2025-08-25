@@ -82,6 +82,10 @@ indices:
         select: head > meta[name="video"]
         value: |
           attribute(el, "content")
+      robots:
+        select: head > meta[name="robots"]
+        value: attribute(el, "content")
+        filter: value ~="index"
   site:
     include:
       - /blue/**
