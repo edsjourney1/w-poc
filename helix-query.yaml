@@ -85,7 +85,7 @@ indices:
       robots:
         select: head > meta[name="robots"]
         value: attribute(el, "content")
-        filter: value ~="(?i)^index|index, follow|index,follow$"
+        filter: value ~="(?i)^(index|index, follow|index,follow)$"
   site:
     include:
       - /blue/**
