@@ -1,0 +1,22 @@
+version: 1
+
+indices:
+  searchSheetless:
+    include:
+      - '/**'
+    exclude:
+      - '/de/**'
+      - '/de'
+      - '/profiles/**'
+      - '/drafts/**'
+    target: s3://productwmk-edsproject.json
+    properties:
+      title:
+        select: head > meta[property="title"]
+        value: attribute(el, "content")
+      description:
+        select: head > meta[name="description"]
+        value: attribute(el, "content")
+      lastModified:
+        select: none
+        value: parseTimestamp(headers["last-modified"], "ddd, DD MMM YYYY hh:mm:ss GMT")
